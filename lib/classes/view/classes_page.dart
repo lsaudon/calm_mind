@@ -1,8 +1,5 @@
 import 'package:calm_mind/classes/classes.dart';
-import 'package:calm_mind/themes/colors.dart';
-import 'package:calm_mind/themes/icons.dart';
-import 'package:calm_mind/themes/images.dart';
-import 'package:calm_mind/themes/theme_data.dart';
+import 'package:calm_mind/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';

@@ -1,4 +1,4 @@
-import 'package:calm_mind/themes/colors.dart';
+import 'package:calm_mind/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

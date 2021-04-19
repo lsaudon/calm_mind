@@ -1,8 +1,5 @@
 import 'package:calm_mind/classes/classes.dart';
-import 'package:calm_mind/themes/colors.dart';
-import 'package:calm_mind/themes/icons.dart';
-import 'package:calm_mind/themes/images.dart';
-import 'package:calm_mind/themes/theme_data.dart';
+import 'package:calm_mind/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:calm_mind/l10n/l10n.dart';
@@ -82,6 +79,7 @@ class _Content extends StatelessWidget {
             ),
             const SizedBox(height: spacing6),
             InkWell(
+              key: const Key('homeView_push_to_ClassesPage'),
               onTap: () {
                 Navigator.of(context)
                     .push<MaterialPageRoute>(MaterialPageRoute(builder: (context) => const ClassesPage()));

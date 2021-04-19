@@ -21,5 +21,3 @@ class ClassesLoaded extends ClassesState {
   @override
   String toString() => 'ClassesLoaded { classes: $classes }';
 }
-
-class ClassesNotLoaded extends ClassesState {}
