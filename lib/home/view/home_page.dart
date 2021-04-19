@@ -74,7 +74,6 @@ class _Content extends StatelessWidget {
             Expanded(
               child: Image.asset(
                 CalmMindImages.smallHappinessSittingOnFloor,
-                fit: BoxFit.fitWidth,
               ),
             ),
             const SizedBox(height: spacing6),
