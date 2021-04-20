@@ -7,9 +7,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:calm_mind/l10n/l10n.dart';
 
 extension PumpApp on WidgetTester {
-  Future<void> pumpApp(Widget widget,
-      {NavigatorObserver? navigatorObserver,
-      ClassesRepository? classesRepository}) {
+  Future<void> pumpApp(Widget widget, {NavigatorObserver? navigatorObserver, ClassesRepository? classesRepository}) {
     Widget aWidget = MaterialApp(
       localizationsDelegates: const [
         AppLocalizations.delegate,
@@ -20,8 +18,7 @@ extension PumpApp on WidgetTester {
       home: widget,
     );
     if (classesRepository != null) {
-      aWidget = RepositoryProvider(
-          create: (context) => classesRepository, child: aWidget);
+      aWidget = RepositoryProvider(create: (context) => classesRepository, child: aWidget);
     }
     return pumpWidget(aWidget);
   }

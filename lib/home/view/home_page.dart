@@ -61,16 +61,14 @@ class _Content extends StatelessWidget {
                 const SizedBox(width: spacing),
                 Text(
                   l10n.applicationName,
-                  style: theme.textTheme.headline5
-                      ?.copyWith(color: CalmMindColors.ink03),
+                  style: theme.textTheme.headline5?.copyWith(color: CalmMindColors.ink03),
                 ),
               ],
             ),
             const SizedBox(height: spacing2),
             Text(
               l10n.tagline,
-              style: theme.textTheme.headline2
-                  ?.copyWith(color: CalmMindColors.ink01),
+              style: theme.textTheme.headline2?.copyWith(color: CalmMindColors.ink01),
             ),
             const SizedBox(height: spacing6),
             Expanded(
@@ -82,10 +80,8 @@ class _Content extends StatelessWidget {
             InkWell(
               key: const Key('homeView_push_to_ClassesPage'),
               onTap: () {
-                Navigator.of(context)
-                    .pushReplacement<MaterialPageRoute, dynamic>(
-                        MaterialPageRoute(
-                            builder: (context) => const ClassesPage()));
+                Navigator.of(context).pushReplacement<MaterialPageRoute, dynamic>(
+                    MaterialPageRoute(builder: (context) => const ClassesPage()));
               },
               focusColor: Colors.white,
               child: Container(
