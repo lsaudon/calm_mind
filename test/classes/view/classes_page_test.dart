@@ -33,9 +33,12 @@ void main() {
     testWidgets('renders ClassesLoading', (tester) async {
       when(() => classesBloc.state).thenReturn(ClassesLoading());
       await tester.pumpApp(
-        BlocProvider.value(
-          value: classesBloc,
-          child: const ClassesView(),
+        BlocProvider(
+          create: (context) => TagCubit(),
+          child: BlocProvider.value(
+            value: classesBloc,
+            child: const ClassesView(),
+          ),
         ),
       );
       expect(find.byType(CircularProgressIndicator), findsOneWidget);
@@ -47,12 +50,35 @@ void main() {
         ]),
       );
       await tester.pumpApp(
-        BlocProvider.value(
-          value: classesBloc,
-          child: const ClassesView(),
+        BlocProvider(
+          create: (context) => TagCubit(),
+          child: BlocProvider.value(
+            value: classesBloc,
+            child: const ClassesView(),
+          ),
         ),
       );
       expect(find.text('Zen Meditation'), findsOneWidget);
+    });
+
+    testWidgets('innerPeace is active when tap on innerPeace', (tester) async {
+      when(() => classesBloc.state).thenReturn(const ClassesLoaded());
+      await tester.pumpApp(
+        BlocProvider(
+          create: (context) => TagCubit(),
+          child: BlocProvider.value(
+            value: classesBloc,
+            child: const ClassesView(),
+          ),
+        ),
+      );
+      final tapTagKey = Key('tag_${TagEnum.innerPeace}');
+      expect(tester.widget<Tag>(find.byKey(tapTagKey)).active, false);
+
+      await tester.tap(find.byKey(tapTagKey));
+      await tester.pumpAndSettle();
+
+      expect(tester.widget<Tag>(find.byKey(tapTagKey)).active, true);
     });
   });
 }

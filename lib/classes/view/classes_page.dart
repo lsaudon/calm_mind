@@ -11,9 +11,12 @@ class ClassesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) =>
-          ClassesBloc(classesRepository: RepositoryProvider.of<ClassesRepository>(context))..add(LoadClasses()),
-      child: const ClassesView(),
+      create: (context) => TagCubit(),
+      child: BlocProvider(
+        create: (_) =>
+            ClassesBloc(classesRepository: RepositoryProvider.of<ClassesRepository>(context))..add(LoadClasses()),
+        child: const ClassesView(),
+      ),
     );
   }
 }
@@ -87,55 +90,35 @@ class _Tags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final list = ['Sleeper', 'Inner Peace', 'Stress', 'Anxiety', 'Sleeper', 'Inner Peace', 'Stress', 'Anxiety'];
-    return ListView.separated(
-      scrollDirection: Axis.horizontal,
-      itemCount: list.length,
-      itemBuilder: (context, index) {
-        final item = list[index];
-        final widget = _Tag(
-          item,
-          active: index == 1,
+    const list = TagEnum.values;
+    return BlocBuilder<TagCubit, TagEnum>(
+      builder: (context, state) {
+        return ListView.separated(
+          scrollDirection: Axis.horizontal,
+          itemCount: list.length,
+          itemBuilder: (context, index) {
+            final item = list[index];
+            final widget = Tag(
+              item.toText(),
+              key: Key('tag_$item'),
+              active: state == item,
+              onTap: () {
+                context.read<TagCubit>().select(item);
+              },
+            );
+            if (index == 0) {
+              return Padding(
+                padding: const EdgeInsets.only(left: 16),
+                child: widget,
+              );
+            }
+            return widget;
+          },
+          separatorBuilder: (context, index) {
+            return const SizedBox(width: spacing2);
+          },
         );
-        if (index == 0) {
-          return Padding(
-            padding: const EdgeInsets.only(left: 16),
-            child: widget,
-          );
-        }
-        return widget;
       },
-      separatorBuilder: (context, index) {
-        return const SizedBox(width: spacing2);
-      },
-    );
-  }
-}
-
-class _Tag extends StatelessWidget {
-  const _Tag(
-    this.data, {
-    Key? key,
-    this.active = false,
-  }) : super(key: key);
-
-  final String data;
-  final bool active;
-
-  @override
-  Widget build(BuildContext context) {
-    final textStyle = Theme.of(context).textTheme.button?.copyWith(color: CalmMindColors.ink01);
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: const BorderRadius.all(Radius.circular(spacing4)),
-        color: active ? CalmMindColors.ink01 : CalmMindColors.ink00,
-      ),
-      alignment: Alignment.center,
-      padding: const EdgeInsets.symmetric(horizontal: spacing4),
-      child: Text(
-        data,
-        style: active ? textStyle?.copyWith(color: CalmMindColors.ink06, fontWeight: FontWeight.w800) : textStyle,
-      ),
     );
   }
 }
