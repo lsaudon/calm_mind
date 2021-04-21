@@ -15,17 +15,18 @@ void main() {
     });
 
     test('initial state is ClassesLoading', () {
-      expect(ClassesBloc(classesRepository: classesRepository).state.runtimeType, equals(ClassesLoading));
+      expect(ClassesBloc(tagCubit: TagCubit(), classesRepository: classesRepository).state.runtimeType,
+          equals(ClassesLoading));
     });
 
     blocTest<ClassesBloc, ClassesState>(
-      'emits [LoadClasses()] when increment is called',
-      build: () => ClassesBloc(classesRepository: classesRepository),
+      'emits [LoadClasses(TagEnum.none)] when increment is called',
+      build: () => ClassesBloc(tagCubit: TagCubit(), classesRepository: classesRepository),
       act: (bloc) {
-        when(() => classesRepository.classes()).thenAnswer((_) => Stream.value([
+        when(() => classesRepository.classes(TagEnum.none)).thenAnswer((_) => Stream.value([
               const Class('Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment, CalmMindColors.orange)
             ]));
-        bloc.add(LoadClasses());
+        bloc.add(const LoadClasses(TagEnum.none));
       },
       expect: () => [
         equals(const ClassesLoaded(

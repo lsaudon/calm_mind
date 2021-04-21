@@ -12,11 +12,15 @@ class ClassesPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => TagCubit(),
-      child: BlocProvider(
-        create: (_) =>
-            ClassesBloc(classesRepository: RepositoryProvider.of<ClassesRepository>(context))..add(LoadClasses()),
-        child: const ClassesView(),
-      ),
+      child: Builder(builder: (context) {
+        return BlocProvider(
+          create: (_) => ClassesBloc(
+            tagCubit: BlocProvider.of<TagCubit>(context),
+            classesRepository: RepositoryProvider.of<ClassesRepository>(context),
+          )..add(const LoadClasses(TagEnum.none)),
+          child: const ClassesView(),
+        );
+      }),
     );
   }
 }
@@ -90,7 +94,7 @@ class _Tags extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const list = TagEnum.values;
+    final list = TagEnum.values.toList()..remove(TagEnum.none);
     return BlocBuilder<TagCubit, TagEnum>(
       builder: (context, state) {
         return ListView.separated(

@@ -8,7 +8,14 @@ abstract class ClassesEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class LoadClasses extends ClassesEvent {}
+class LoadClasses extends ClassesEvent {
+  const LoadClasses(this.tagEnum);
+
+  final TagEnum tagEnum;
+
+  @override
+  List<Object> get props => [tagEnum];
+}
 
 class ClassesUpdated extends ClassesEvent {
   const ClassesUpdated(this.classes);

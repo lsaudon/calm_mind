@@ -22,7 +22,7 @@ void main() {
     late ClassesBloc classesBloc;
 
     setUpAll(() {
-      registerFallbackValue<ClassesEvent>(LoadClasses());
+      registerFallbackValue<ClassesEvent>(const LoadClasses(TagEnum.sleeper));
       registerFallbackValue<ClassesState>(ClassesLoading());
     });
 

@@ -6,8 +6,8 @@ void main() {
   group('TagCubit', () {
     setUp(() {});
 
-    test('initial state is TagEnum.sleeper', () {
-      expect(TagCubit().state, TagEnum.sleeper);
+    test('initial state is TagEnum.none', () {
+      expect(TagCubit().state, TagEnum.none);
     });
 
     group('select', () {

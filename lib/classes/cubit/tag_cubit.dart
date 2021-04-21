@@ -1,29 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum TagEnum {
-  sleeper,
-  innerPeace,
-  stress,
-  anxiety,
-}
-
-extension TagEnumExtension on TagEnum {
-  String toText() {
-    switch (this) {
-      case TagEnum.sleeper:
-        return 'Sleeper';
-      case TagEnum.innerPeace:
-        return 'Inner Peace';
-      case TagEnum.stress:
-        return 'Stress';
-      case TagEnum.anxiety:
-        return 'Anxiety';
-    }
-  }
-}
+import 'package:calm_mind/classes/classes.dart';
 
 class TagCubit extends Cubit<TagEnum> {
-  TagCubit() : super(TagEnum.sleeper);
+  TagCubit() : super(TagEnum.none);
 
   void select(TagEnum tagEnum) {
     emit(tagEnum);

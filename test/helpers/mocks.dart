@@ -8,3 +8,5 @@ class MockNavigatorObserver extends Mock implements NavigatorObserver {}
 class MockClassesRepository extends Mock implements ClassesRepository {}
 
 class MockClassesBloc extends MockBloc<ClassesEvent, ClassesState> implements ClassesBloc {}
+
+class MockTagCubit extends MockCubit<TagEnum> implements TagCubit {}
