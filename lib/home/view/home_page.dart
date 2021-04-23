@@ -80,7 +80,7 @@ class _Content extends StatelessWidget {
             InkWell(
               key: const Key('homeView_push_to_ClassesPage'),
               onTap: () {
-                Navigator.of(context).pushReplacement<MaterialPageRoute, dynamic>(
+                Navigator.of(context).pushReplacement<MaterialPageRoute, ClassesPage>(
                     MaterialPageRoute(builder: (context) => const ClassesPage()));
               },
               focusColor: Colors.white,

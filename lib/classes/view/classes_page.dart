@@ -1,3 +1,4 @@
+import 'package:calm_mind/class_player/class_player.dart';
 import 'package:calm_mind/classes/classes.dart';
 import 'package:calm_mind/themes/themes.dart';
 import 'package:flutter/material.dart';
@@ -246,9 +247,16 @@ class _Card extends StatelessWidget {
         ),
         color: color,
         elevation: 0,
-        child: Padding(
-          padding: const EdgeInsets.all(spacing4),
-          child: child,
+        child: InkWell(
+          onTap: () {
+            Navigator.of(context)
+                .push<MaterialPageRoute>(MaterialPageRoute(builder: (context) => const ClassPlayerPage()));
+          },
+          borderRadius: const BorderRadius.all(Radius.circular(spacing4)),
+          child: Padding(
+            padding: const EdgeInsets.all(spacing4),
+            child: child,
+          ),
         ),
       ),
     );

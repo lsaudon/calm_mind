@@ -7,6 +7,8 @@ const double spacing2 = spacing * 2;
 const double spacing4 = spacing * 4;
 const double spacing5 = spacing * 5;
 const double spacing6 = spacing * 6;
+const double spacing12 = spacing * 12;
+const double iconSizeSmall = 24;
 const double iconSize = 32;
 
 class CalmMindThemeData {
@@ -29,7 +31,7 @@ class CalmMindThemeData {
     headline5: GoogleFonts.nunitoSans(fontSize: 20, fontWeight: FontWeight.w700, letterSpacing: -0.5),
     headline6: GoogleFonts.nunitoSans(fontSize: 22, fontWeight: FontWeight.w700, letterSpacing: 0.15),
     subtitle1: GoogleFonts.nunitoSans(fontSize: 17, fontWeight: FontWeight.w400, letterSpacing: 0.15),
-    subtitle2: GoogleFonts.nunitoSans(fontSize: 15, fontWeight: FontWeight.w500, letterSpacing: 0.1),
+    subtitle2: GoogleFonts.nunitoSans(fontSize: 14, fontWeight: FontWeight.w400, letterSpacing: 0),
     bodyText1: GoogleFonts.nunitoSans(fontSize: 17, fontWeight: FontWeight.w400, letterSpacing: 0.5),
     bodyText2: GoogleFonts.nunitoSans(fontSize: 15, fontWeight: FontWeight.w400, letterSpacing: 0.25),
     button: GoogleFonts.nunitoSans(fontSize: 16, fontWeight: FontWeight.w400, letterSpacing: -0.5),
