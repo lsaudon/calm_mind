@@ -16,9 +16,9 @@ void main() {
       _classId = ClassId.init();
     });
 
-    test('initial state is ClassesLoading', () {
+    test('initial state is ClassesInitial', () {
       expect(ClassesBloc(tagCubit: TagCubit(), classesRepository: _classesRepository).state.runtimeType,
-          equals(ClassesLoading));
+          equals(ClassesInitial));
     });
 
     blocTest<ClassesBloc, ClassesState>(
@@ -29,10 +29,10 @@ void main() {
               Class(_classId, 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment,
                   CalmMindColors.orange)
             ]));
-        bloc.add(const LoadClasses(TagEnum.none));
+        bloc.add(const ClassesLoaded(TagEnum.none));
       },
       expect: () => [
-        equals(ClassesLoaded([
+        equals(ClassesLoadSuccess([
           Class(_classId, 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment, CalmMindColors.orange)
         ]))
       ],

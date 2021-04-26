@@ -8,8 +8,8 @@ abstract class ClassesEvent extends Equatable {
   List<Object> get props => [];
 }
 
-class LoadClasses extends ClassesEvent {
-  const LoadClasses(this.tagEnum);
+class ClassesLoaded extends ClassesEvent {
+  const ClassesLoaded(this.tagEnum);
 
   final TagEnum tagEnum;
 

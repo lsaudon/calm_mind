@@ -22,16 +22,16 @@ void main() {
     late ClassesBloc classesBloc;
 
     setUpAll(() {
-      registerFallbackValue<ClassesEvent>(const LoadClasses(TagEnum.sleeper));
-      registerFallbackValue<ClassesState>(ClassesLoading());
+      registerFallbackValue<ClassesEvent>(const ClassesLoaded(TagEnum.sleeper));
+      registerFallbackValue<ClassesState>(ClassesLoadInProgress());
     });
 
     setUp(() {
       classesBloc = MockClassesBloc();
     });
 
-    testWidgets('renders ClassesLoading', (tester) async {
-      when(() => classesBloc.state).thenReturn(ClassesLoading());
+    testWidgets('renders ClassesInitial', (tester) async {
+      when(() => classesBloc.state).thenReturn(ClassesLoadInProgress());
       await tester.pumpApp(
         BlocProvider(
           create: (context) => TagCubit(),
@@ -43,9 +43,9 @@ void main() {
       );
       expect(find.byType(CircularProgressIndicator), findsOneWidget);
     });
-    testWidgets('renders ClassesLoading', (tester) async {
+    testWidgets('renders ClassesInitial', (tester) async {
       when(() => classesBloc.state).thenReturn(
-        ClassesLoaded([
+        ClassesLoadSuccess([
           Class(ClassId.init(), 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment,
               CalmMindColors.orange),
         ]),
@@ -63,7 +63,7 @@ void main() {
     });
 
     testWidgets('innerPeace is active when tap on innerPeace', (tester) async {
-      when(() => classesBloc.state).thenReturn(const ClassesLoaded());
+      when(() => classesBloc.state).thenReturn(const ClassesLoadSuccess());
       await tester.pumpApp(
         BlocProvider(
           create: (context) => TagCubit(),

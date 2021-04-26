@@ -8,10 +8,12 @@ abstract class ClassesState extends Equatable {
   List<Object> get props => [];
 }
 
-class ClassesLoading extends ClassesState {}
+class ClassesInitial extends ClassesState {}
 
-class ClassesLoaded extends ClassesState {
-  const ClassesLoaded([this.classes = const []]);
+class ClassesLoadInProgress extends ClassesState {}
+
+class ClassesLoadSuccess extends ClassesState {
+  const ClassesLoadSuccess([this.classes = const []]);
 
   final List<Class> classes;
 
@@ -19,5 +21,5 @@ class ClassesLoaded extends ClassesState {
   List<Object> get props => [classes];
 
   @override
-  String toString() => 'ClassesLoaded { classes: $classes }';
+  String toString() => 'ClassesLoadSuccess { classes: $classes }';
 }

@@ -18,7 +18,7 @@ class ClassesPage extends StatelessWidget {
           create: (_) => ClassesBloc(
             tagCubit: BlocProvider.of<TagCubit>(context),
             classesRepository: RepositoryProvider.of<ClassesRepository>(context),
-          )..add(const LoadClasses(TagEnum.none)),
+          )..add(const ClassesLoaded(TagEnum.none)),
           child: const ClassesView(),
         );
       }),
@@ -137,10 +137,10 @@ class _ClassesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ClassesBloc, ClassesState>(
       builder: (context, state) {
-        if (state is ClassesLoading) {
+        if (state is ClassesLoadInProgress) {
           return const Center(child: CircularProgressIndicator());
         }
-        if (state is ClassesLoaded) {
+        if (state is ClassesLoadSuccess) {
           final classes = state.classes;
           return StaggeredGridView.countBuilder(
             crossAxisCount: 2,
