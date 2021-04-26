@@ -45,8 +45,9 @@ void main() {
     });
     testWidgets('renders ClassesLoading', (tester) async {
       when(() => classesBloc.state).thenReturn(
-        const ClassesLoaded([
-          Class('Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment, CalmMindColors.orange),
+        ClassesLoaded([
+          Class(ClassId.init(), 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment,
+              CalmMindColors.orange),
         ]),
       );
       await tester.pumpApp(

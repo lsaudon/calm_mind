@@ -6,51 +6,62 @@ class ClassesRepository {
     switch (tagEnum) {
       case TagEnum.none:
         yield [
-          const Class('Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment, CalmMindColors.orange),
-          const Class('Reflection', '6 min', CalmMindImages.smallHappinessCandleShelf, CalmMindColors.blue),
-          const Class('Visualization', '13 min', CalmMindImages.smallHappinessStanding2, CalmMindColors.pink),
-          const Class('Loving Kindness', '15 min', CalmMindImages.smallHappinessStanding1, CalmMindColors.yellow),
-          const Class('Focused Attention', '10 min', CalmMindImages.smallHappinessWavyPlant, CalmMindColors.purple),
+          Class(ClassId.init(), 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment,
+              CalmMindColors.orange),
+          Class(ClassId.init(), 'Reflection', '6 min', CalmMindImages.smallHappinessCandleShelf, CalmMindColors.blue),
+          Class(ClassId.init(), 'Visualization', '13 min', CalmMindImages.smallHappinessStanding2, CalmMindColors.pink),
+          Class(ClassId.init(), 'Loving Kindness', '15 min', CalmMindImages.smallHappinessStanding1,
+              CalmMindColors.yellow),
+          Class(ClassId.init(), 'Focused Attention', '10 min', CalmMindImages.smallHappinessWavyPlant,
+              CalmMindColors.purple),
         ];
         break;
       case TagEnum.sleeper:
         yield [
-          const Class(
-              'Zen Meditation Sleeper', '20 min', CalmMindImages.smallHappinessEntertainment, CalmMindColors.orange),
-          const Class('Reflection', '6 min', CalmMindImages.smallHappinessCandleShelf, CalmMindColors.blue),
-          const Class('Visualization', '13 min', CalmMindImages.smallHappinessStanding2, CalmMindColors.pink),
-          const Class('Loving Kindness', '15 min', CalmMindImages.smallHappinessStanding1, CalmMindColors.yellow),
-          const Class('Focused Attention', '10 min', CalmMindImages.smallHappinessWavyPlant, CalmMindColors.purple),
+          Class(ClassId.init(), 'Zen Meditation Sleeper', '20 min', CalmMindImages.smallHappinessEntertainment,
+              CalmMindColors.orange),
+          Class(ClassId.init(), 'Reflection', '6 min', CalmMindImages.smallHappinessCandleShelf, CalmMindColors.blue),
+          Class(ClassId.init(), 'Visualization', '13 min', CalmMindImages.smallHappinessStanding2, CalmMindColors.pink),
+          Class(ClassId.init(), 'Loving Kindness', '15 min', CalmMindImages.smallHappinessStanding1,
+              CalmMindColors.yellow),
+          Class(ClassId.init(), 'Focused Attention', '10 min', CalmMindImages.smallHappinessWavyPlant,
+              CalmMindColors.purple),
         ];
         break;
       case TagEnum.innerPeace:
         yield [
-          const Class(
-              'Zen Meditation InnerPeace', '20 min', CalmMindImages.smallHappinessEntertainment, CalmMindColors.orange),
-          const Class('Reflection', '6 min', CalmMindImages.smallHappinessCandleShelf, CalmMindColors.blue),
-          const Class('Visualization', '13 min', CalmMindImages.smallHappinessStanding2, CalmMindColors.pink),
-          const Class('Loving Kindness', '15 min', CalmMindImages.smallHappinessStanding1, CalmMindColors.yellow),
-          const Class('Focused Attention', '10 min', CalmMindImages.smallHappinessWavyPlant, CalmMindColors.purple),
+          Class(ClassId.init(), 'Zen Meditation InnerPeace', '20 min', CalmMindImages.smallHappinessEntertainment,
+              CalmMindColors.orange),
+          Class(ClassId.init(), 'Reflection', '6 min', CalmMindImages.smallHappinessCandleShelf, CalmMindColors.blue),
+          Class(ClassId.init(), 'Visualization', '13 min', CalmMindImages.smallHappinessStanding2, CalmMindColors.pink),
+          Class(ClassId.init(), 'Loving Kindness', '15 min', CalmMindImages.smallHappinessStanding1,
+              CalmMindColors.yellow),
+          Class(ClassId.init(), 'Focused Attention', '10 min', CalmMindImages.smallHappinessWavyPlant,
+              CalmMindColors.purple),
         ];
         break;
       case TagEnum.stress:
         yield [
-          const Class(
-              'Zen Meditation Stress', '20 min', CalmMindImages.smallHappinessEntertainment, CalmMindColors.orange),
-          const Class('Reflection', '6 min', CalmMindImages.smallHappinessCandleShelf, CalmMindColors.blue),
-          const Class('Visualization', '13 min', CalmMindImages.smallHappinessStanding2, CalmMindColors.pink),
-          const Class('Loving Kindness', '15 min', CalmMindImages.smallHappinessStanding1, CalmMindColors.yellow),
-          const Class('Focused Attention', '10 min', CalmMindImages.smallHappinessWavyPlant, CalmMindColors.purple),
+          Class(ClassId.init(), 'Zen Meditation Stress', '20 min', CalmMindImages.smallHappinessEntertainment,
+              CalmMindColors.orange),
+          Class(ClassId.init(), 'Reflection', '6 min', CalmMindImages.smallHappinessCandleShelf, CalmMindColors.blue),
+          Class(ClassId.init(), 'Visualization', '13 min', CalmMindImages.smallHappinessStanding2, CalmMindColors.pink),
+          Class(ClassId.init(), 'Loving Kindness', '15 min', CalmMindImages.smallHappinessStanding1,
+              CalmMindColors.yellow),
+          Class(ClassId.init(), 'Focused Attention', '10 min', CalmMindImages.smallHappinessWavyPlant,
+              CalmMindColors.purple),
         ];
         break;
       case TagEnum.anxiety:
         yield [
-          const Class(
-              'Zen Meditation Anxiety', '20 min', CalmMindImages.smallHappinessEntertainment, CalmMindColors.orange),
-          const Class('Reflection', '6 min', CalmMindImages.smallHappinessCandleShelf, CalmMindColors.blue),
-          const Class('Visualization', '13 min', CalmMindImages.smallHappinessStanding2, CalmMindColors.pink),
-          const Class('Loving Kindness', '15 min', CalmMindImages.smallHappinessStanding1, CalmMindColors.yellow),
-          const Class('Focused Attention', '10 min', CalmMindImages.smallHappinessWavyPlant, CalmMindColors.purple),
+          Class(ClassId.init(), 'Zen Meditation Anxiety', '20 min', CalmMindImages.smallHappinessEntertainment,
+              CalmMindColors.orange),
+          Class(ClassId.init(), 'Reflection', '6 min', CalmMindImages.smallHappinessCandleShelf, CalmMindColors.blue),
+          Class(ClassId.init(), 'Visualization', '13 min', CalmMindImages.smallHappinessStanding2, CalmMindColors.pink),
+          Class(ClassId.init(), 'Loving Kindness', '15 min', CalmMindImages.smallHappinessStanding1,
+              CalmMindColors.yellow),
+          Class(ClassId.init(), 'Focused Attention', '10 min', CalmMindImages.smallHappinessWavyPlant,
+              CalmMindColors.purple),
         ];
         break;
     }

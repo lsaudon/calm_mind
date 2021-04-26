@@ -64,3 +64,4 @@ linter:
     avoid_classes_with_only_static_members: false
     prefer_relative_imports: false
     avoid_types_on_closure_parameters: false
+    sort_pub_dependencies: false
