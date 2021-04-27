@@ -1,6 +1,10 @@
+import 'package:calm_mind/classes/classes.dart';
 import 'package:calm_mind/themes/themes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
+import 'package:calm_mind/class_player/class_player.dart';
 
 class ClassPlayerPage extends StatelessWidget {
   const ClassPlayerPage({Key? key}) : super(key: key);
@@ -79,37 +83,51 @@ class _Content extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(spacing6),
-          topRight: Radius.circular(spacing6),
-        ),
-        color: CalmMindColors.ink06,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.only(top: spacing12),
-        child: Center(
-          child: Column(
-            children: [
-              Container(
-                height: 231,
-                width: 231,
-                color: CalmMindColors.orange,
+    return BlocBuilder<ClassPlayerBloc, ClassPlayerState>(
+      builder: (context, state) {
+        if (state is ClassPlayerLoadInProgress) {
+          return const Center(child: CircularProgressIndicator());
+        }
+        if (state is ClassPlayerLoadSuccess) {
+          final classItem = state.value;
+          return Container(
+            decoration: const BoxDecoration(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(spacing6),
+                topRight: Radius.circular(spacing6),
               ),
-              const SizedBox(height: spacing6),
-              const _TextContent(),
-              const SizedBox(height: spacing6),
-              const _PlayerElements(),
-              const SizedBox(height: spacing6),
-              Container(
-                height: 48,
-                color: CalmMindColors.orange,
+              color: CalmMindColors.ink06,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(top: spacing12),
+              child: Center(
+                child: Column(
+                  children: [
+                    Container(
+                      height: 231,
+                      width: 231,
+                      color: CalmMindColors.orange,
+                    ),
+                    const SizedBox(height: spacing6),
+                    _TextContent(
+                      label: classItem.label,
+                      tag: classItem.tag,
+                    ),
+                    const SizedBox(height: spacing6),
+                    const _PlayerElements(),
+                    const SizedBox(height: spacing6),
+                    Container(
+                      height: 48,
+                      color: CalmMindColors.orange,
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
-        ),
-      ),
+            ),
+          );
+        }
+        return const SizedBox();
+      },
     );
   }
 }
@@ -117,7 +135,12 @@ class _Content extends StatelessWidget {
 class _TextContent extends StatelessWidget {
   const _TextContent({
     Key? key,
+    required this.label,
+    required this.tag,
   }) : super(key: key);
+
+  final String label;
+  final TagEnum tag;
 
   @override
   Widget build(BuildContext context) {
@@ -129,12 +152,12 @@ class _TextContent extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'Zen Meditation',
+            label,
             style: Theme.of(context).textTheme.headline4?.copyWith(color: CalmMindColors.ink01),
           ),
           const SizedBox(height: spacing),
           Text(
-            'Inner Peace',
+            tag.toText(),
             style: Theme.of(context).textTheme.subtitle2?.copyWith(color: CalmMindColors.ink02),
           ),
         ],

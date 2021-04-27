@@ -1,4 +1,4 @@
-import 'package:calm_mind/classes/classes.dart';
+import 'package:calm_mind/class_player/class_player.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class ClassPlayerState extends Equatable {
@@ -15,7 +15,7 @@ class ClassPlayerLoadInProgress extends ClassPlayerState {}
 class ClassPlayerLoadSuccess extends ClassPlayerState {
   const ClassPlayerLoadSuccess(this.value);
 
-  final Class value;
+  final ClassForPlayer value;
 
   @override
   List<Object> get props => [value];

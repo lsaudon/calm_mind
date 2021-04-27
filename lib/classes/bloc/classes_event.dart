@@ -20,7 +20,7 @@ class ClassesLoaded extends ClassesEvent {
 class ClassesUpdated extends ClassesEvent {
   const ClassesUpdated(this.classes);
 
-  final List<Class> classes;
+  final List<ClassForList> classes;
 
   @override
   List<Object> get props => [classes];

@@ -17,24 +17,27 @@ void main() {
     });
 
     test('initial state is ClassesInitial', () {
-      expect(ClassesBloc(tagCubit: TagCubit(), classesRepository: _classesRepository).state.runtimeType,
-          equals(ClassesInitial));
+      expect(
+          ClassesBloc(tagCubit: TagCubit(), classesRepository: _classesRepository).state.runtimeType, ClassesInitial);
     });
 
     blocTest<ClassesBloc, ClassesState>(
-      'emits [LoadClasses(TagEnum.none)] when increment is called',
+      'emits [ClassesLoadSuccess(ClassForTeam)] when ClassesLoaded(TagEnum.none) is called',
       build: () => ClassesBloc(tagCubit: TagCubit(), classesRepository: _classesRepository),
       act: (bloc) {
         when(() => _classesRepository.classes(TagEnum.none)).thenAnswer((_) => Stream.value([
-              Class(_classId, 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment,
+              ClassForList(_classId, 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment,
                   CalmMindColors.orange)
             ]));
         bloc.add(const ClassesLoaded(TagEnum.none));
       },
       expect: () => [
-        equals(ClassesLoadSuccess([
-          Class(_classId, 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment, CalmMindColors.orange)
-        ]))
+        ClassesLoadSuccess(
+          [
+            ClassForList(
+                _classId, 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment, CalmMindColors.orange)
+          ],
+        ),
       ],
     );
   });

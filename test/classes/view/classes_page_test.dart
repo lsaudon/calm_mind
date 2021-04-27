@@ -46,7 +46,7 @@ void main() {
     testWidgets('renders ClassesInitial', (tester) async {
       when(() => classesBloc.state).thenReturn(
         ClassesLoadSuccess([
-          Class(ClassId.init(), 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment,
+          ClassForList(ClassId.init(), 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment,
               CalmMindColors.orange),
         ]),
       );

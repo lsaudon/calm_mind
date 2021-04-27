@@ -18,8 +18,14 @@ class ClassPlayerBloc extends Bloc<ClassPlayerEvent, ClassPlayerState> {
 
   Stream<ClassPlayerState> _mapClassPlayerSelectedToState(ClassPlayerSelected event) async* {
     yield ClassPlayerLoadInProgress();
-    final aClass = Class(
-        event.classId, 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment, CalmMindColors.orange);
-    yield ClassPlayerLoadSuccess(aClass);
+    final classForPlayer = ClassForPlayer(
+      event.classId,
+      'Zen Meditation',
+      'url',
+      TagEnum.innerPeace,
+      CalmMindImages.smallHappinessEntertainment,
+      CalmMindColors.orange,
+    );
+    yield ClassPlayerLoadSuccess(classForPlayer);
   }
 }

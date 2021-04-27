@@ -1,3 +1,4 @@
+import 'package:calm_mind/class_player/class_player.dart';
 import 'package:calm_mind/classes/classes.dart';
 import 'package:calm_mind/home/home.dart';
 import 'package:calm_mind/themes/themes.dart';
@@ -13,14 +14,17 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return RepositoryProvider(
       create: (context) => ClassesRepository(),
-      child: MaterialApp(
-        theme: CalmMindThemeData.lightThemeData,
-        localizationsDelegates: const [
-          AppLocalizations.delegate,
-          GlobalMaterialLocalizations.delegate,
-        ],
-        supportedLocales: AppLocalizations.supportedLocales,
-        home: const HomePage(),
+      child: BlocProvider(
+        create: (context) => ClassPlayerBloc(),
+        child: MaterialApp(
+          theme: CalmMindThemeData.lightThemeData,
+          localizationsDelegates: const [
+            AppLocalizations.delegate,
+            GlobalMaterialLocalizations.delegate,
+          ],
+          supportedLocales: AppLocalizations.supportedLocales,
+          home: const HomePage(),
+        ),
       ),
     );
   }

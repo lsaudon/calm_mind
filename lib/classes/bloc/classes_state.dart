@@ -15,7 +15,7 @@ class ClassesLoadInProgress extends ClassesState {}
 class ClassesLoadSuccess extends ClassesState {
   const ClassesLoadSuccess([this.classes = const []]);
 
-  final List<Class> classes;
+  final List<ClassForList> classes;
 
   @override
   List<Object> get props => [classes];

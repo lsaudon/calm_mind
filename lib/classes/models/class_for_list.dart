@@ -16,8 +16,8 @@ class ClassId extends Equatable {
   List<Object?> get props => [value];
 }
 
-class Class extends Equatable {
-  const Class(
+class ClassForList extends Equatable {
+  const ClassForList(
     this.id,
     this.label,
     this.timeLabel,
@@ -33,6 +33,7 @@ class Class extends Equatable {
 
   @override
   List<Object?> get props => [
+        id,
         label,
         timeLabel,
         imageName,

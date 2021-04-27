@@ -249,6 +249,7 @@ class _Card extends StatelessWidget {
         elevation: 0,
         child: InkWell(
           onTap: () {
+            BlocProvider.of<ClassPlayerBloc>(context).add(ClassPlayerSelected(ClassId.init()));
             Navigator.of(context)
                 .push<MaterialPageRoute>(MaterialPageRoute(builder: (context) => const ClassPlayerPage()));
           },
