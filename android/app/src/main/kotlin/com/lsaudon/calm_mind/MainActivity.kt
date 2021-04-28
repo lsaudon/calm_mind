@@ -1,4 +1,4 @@
-package com.lsaudon.calmMind
+package com.lsaudon.calm_mind
 
 import io.flutter.embedding.android.FlutterActivity
 
