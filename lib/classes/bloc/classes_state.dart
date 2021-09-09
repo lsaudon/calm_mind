@@ -13,7 +13,7 @@ class ClassesInitial extends ClassesState {}
 class ClassesLoadInProgress extends ClassesState {}
 
 class ClassesLoadSuccess extends ClassesState {
-  const ClassesLoadSuccess([this.classes = const []]);
+  const ClassesLoadSuccess([final this.classes = const []]);
 
   final List<ClassForList> classes;
 

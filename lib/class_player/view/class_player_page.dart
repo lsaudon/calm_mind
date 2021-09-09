@@ -1,25 +1,24 @@
+import 'package:calm_mind/class_player/class_player.dart';
 import 'package:calm_mind/classes/classes.dart';
 import 'package:calm_mind/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:calm_mind/class_player/class_player.dart';
-
 class ClassPlayerPage extends StatelessWidget {
-  const ClassPlayerPage({Key? key}) : super(key: key);
+  const ClassPlayerPage({final Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return const ClassPlayerView();
   }
 }
 
 class ClassPlayerView extends StatelessWidget {
-  const ClassPlayerView({Key? key}) : super(key: key);
+  const ClassPlayerView({final Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Scaffold(
       backgroundColor: CalmMindColors.yellow,
       body: Column(
@@ -42,11 +41,11 @@ class ClassPlayerView extends StatelessWidget {
 
 class _Header extends StatelessWidget {
   const _Header({
-    Key? key,
+    final Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: spacing5, horizontal: spacing4),
@@ -78,13 +77,13 @@ class _Header extends StatelessWidget {
 
 class _Content extends StatelessWidget {
   const _Content({
-    Key? key,
+    final Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return BlocBuilder<ClassPlayerBloc, ClassPlayerState>(
-      builder: (context, state) {
+      builder: (final context, final state) {
         if (state is ClassPlayerLoadInProgress) {
           return const Center(child: CircularProgressIndicator());
         }
@@ -134,16 +133,16 @@ class _Content extends StatelessWidget {
 
 class _TextContent extends StatelessWidget {
   const _TextContent({
-    Key? key,
-    required this.label,
-    required this.tag,
+    final Key? key,
+    required final this.label,
+    required final this.tag,
   }) : super(key: key);
 
   final String label;
   final TagEnum tag;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
         top: spacing2,
@@ -168,11 +167,11 @@ class _TextContent extends StatelessWidget {
 
 class _PlayerElements extends StatelessWidget {
   const _PlayerElements({
-    Key? key,
+    final Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -207,11 +206,11 @@ class _PlayerElements extends StatelessWidget {
 
 class _PlayerTabBars extends StatelessWidget {
   const _PlayerTabBars({
-    Key? key,
+    final Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.only(
@@ -240,13 +239,13 @@ class _PlayerTabBars extends StatelessWidget {
 class _PlayerTab extends StatelessWidget {
   const _PlayerTab(
     this.assetName, {
-    Key? key,
+    final Key? key,
   }) : super(key: key);
 
   final String assetName;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return SizedBox(
       width: 99,
       height: 64,

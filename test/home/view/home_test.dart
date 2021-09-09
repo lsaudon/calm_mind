@@ -10,12 +10,12 @@ void main() {
   group('HomePage', () {
     const pushButtonKey = Key('homeView_push_to_ClassesPage');
 
-    testWidgets('renders HomePage', (tester) async {
+    testWidgets('renders HomePage', (final tester) async {
       await tester.pumpApp(const HomePage());
       expect(find.text('CalmDown'), findsOneWidget);
     });
 
-    testWidgets('go to ClassesPage when push Button is tapped', (tester) async {
+    testWidgets('go to ClassesPage when push Button is tapped', (final tester) async {
       final classesRepository = ClassesRepository();
       final navigatorObserver = MockNavigatorObserver();
       await tester.pumpApp(
@@ -25,10 +25,12 @@ void main() {
       );
       await tester.tap(find.byKey(pushButtonKey));
       await tester.pumpAndSettle();
-      verify(() => navigatorObserver.didReplace(
-            newRoute: any(named: 'newRoute'),
-            oldRoute: any(named: 'oldRoute'),
-          )).called(1);
+      verify(
+        () => navigatorObserver.didReplace(
+          newRoute: any(named: 'newRoute'),
+          oldRoute: any(named: 'oldRoute'),
+        ),
+      ).called(1);
       expect(find.byType(ClassesPage), findsOneWidget);
     });
   });

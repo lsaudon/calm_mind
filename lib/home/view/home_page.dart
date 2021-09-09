@@ -1,23 +1,23 @@
 import 'package:calm_mind/classes/classes.dart';
+import 'package:calm_mind/l10n/l10n.dart';
 import 'package:calm_mind/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:calm_mind/l10n/l10n.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({final Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return const HomeView();
   }
 }
 
 class HomeView extends StatelessWidget {
-  const HomeView({Key? key}) : super(key: key);
+  const HomeView({final Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Stack(
@@ -41,7 +41,7 @@ class HomeView extends StatelessWidget {
 
 class _Content extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final theme = Theme.of(context);
     final l10n = context.l10n;
 
@@ -81,7 +81,8 @@ class _Content extends StatelessWidget {
               key: const Key('homeView_push_to_ClassesPage'),
               onTap: () {
                 Navigator.of(context).pushReplacement<MaterialPageRoute, ClassesPage>(
-                    MaterialPageRoute(builder: (context) => const ClassesPage()));
+                  MaterialPageRoute(builder: (final context) => const ClassesPage()),
+                );
               },
               focusColor: Colors.white,
               child: Container(
@@ -106,10 +107,10 @@ class _Content extends StatelessWidget {
 
 class Circle extends StatelessWidget {
   const Circle({
-    Key? key,
-    this.offset,
-    this.radius,
-    this.color,
+    final Key? key,
+    final this.offset,
+    final this.radius,
+    final this.color,
   }) : super(key: key);
 
   final Offset? offset;
@@ -117,10 +118,10 @@ class Circle extends StatelessWidget {
   final Color? color;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     return CustomPaint(
       painter: _Circle(
-        offset ?? const Offset(0, 0),
+        offset ?? Offset.zero,
         radius ?? 0,
         color ?? CalmMindColors.ink01,
       ),
@@ -136,7 +137,7 @@ class _Circle extends CustomPainter {
   final Color color;
 
   @override
-  void paint(Canvas canvas, Size size) {
+  void paint(final Canvas canvas, final Size size) {
     final paint = Paint()
       ..color = color
       ..style = PaintingStyle.fill;
@@ -144,5 +145,5 @@ class _Circle extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) => true;
+  bool shouldRepaint(final CustomPainter oldDelegate) => true;
 }

@@ -1,19 +1,21 @@
 import 'package:calm_mind/classes/classes.dart';
 import 'package:calm_mind/themes/themes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_test/flutter_test.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
 import '../../helpers/helpers.dart';
 
 void main() {
   group('CounterPage', () {
-    testWidgets('renders ClassesView', (tester) async {
-      await tester.pumpApp(RepositoryProvider(
-        create: (context) => ClassesRepository(),
-        child: const ClassesPage(),
-      ));
+    testWidgets('renders ClassesView', (final tester) async {
+      await tester.pumpApp(
+        RepositoryProvider(
+          create: (final context) => ClassesRepository(),
+          child: const ClassesPage(),
+        ),
+      );
       expect(find.byType(ClassesView), findsOneWidget);
     });
   });
@@ -30,11 +32,11 @@ void main() {
       classesBloc = MockClassesBloc();
     });
 
-    testWidgets('renders ClassesInitial', (tester) async {
+    testWidgets('renders ClassesInitial', (final tester) async {
       when(() => classesBloc.state).thenReturn(ClassesLoadInProgress());
       await tester.pumpApp(
         BlocProvider(
-          create: (context) => TagCubit(),
+          create: (final context) => TagCubit(),
           child: BlocProvider.value(
             value: classesBloc,
             child: const ClassesView(),
@@ -43,16 +45,21 @@ void main() {
       );
       expect(find.byType(CircularProgressIndicator), findsOneWidget);
     });
-    testWidgets('renders ClassesInitial', (tester) async {
+    testWidgets('renders ClassesInitial', (final tester) async {
       when(() => classesBloc.state).thenReturn(
         ClassesLoadSuccess([
-          ClassForList(ClassId.init(), 'Zen Meditation', '20 min', CalmMindImages.smallHappinessEntertainment,
-              CalmMindColors.orange),
+          ClassForList(
+            ClassId.init(),
+            'Zen Meditation',
+            '20 min',
+            CalmMindImages.smallHappinessEntertainment,
+            CalmMindColors.orange,
+          ),
         ]),
       );
       await tester.pumpApp(
         BlocProvider(
-          create: (context) => TagCubit(),
+          create: (final context) => TagCubit(),
           child: BlocProvider.value(
             value: classesBloc,
             child: const ClassesView(),
@@ -62,11 +69,11 @@ void main() {
       expect(find.text('Zen Meditation'), findsOneWidget);
     });
 
-    testWidgets('innerPeace is active when tap on innerPeace', (tester) async {
+    testWidgets('innerPeace is active when tap on innerPeace', (final tester) async {
       when(() => classesBloc.state).thenReturn(const ClassesLoadSuccess());
       await tester.pumpApp(
         BlocProvider(
-          create: (context) => TagCubit(),
+          create: (final context) => TagCubit(),
           child: BlocProvider.value(
             value: classesBloc,
             child: const ClassesView(),

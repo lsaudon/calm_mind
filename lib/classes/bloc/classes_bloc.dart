@@ -1,14 +1,14 @@
 import 'dart:async';
 
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:calm_mind/classes/classes.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ClassesBloc extends Bloc<ClassesEvent, ClassesState> {
   ClassesBloc({
-    required this.tagCubit,
-    required this.classesRepository,
+    required final this.tagCubit,
+    required final this.classesRepository,
   }) : super(ClassesInitial()) {
-    _tagSubscription = tagCubit.stream.listen((event) {
+    _tagSubscription = tagCubit.stream.listen((final event) {
       add(ClassesLoaded(event));
     });
   }
@@ -19,7 +19,7 @@ class ClassesBloc extends Bloc<ClassesEvent, ClassesState> {
   StreamSubscription? _classesSubscription;
 
   @override
-  Stream<ClassesState> mapEventToState(ClassesEvent event) async* {
+  Stream<ClassesState> mapEventToState(final ClassesEvent event) async* {
     if (event is ClassesLoaded) {
       yield* _mapClassesLoadedToState(event);
     } else if (event is ClassesUpdated) {
@@ -27,12 +27,13 @@ class ClassesBloc extends Bloc<ClassesEvent, ClassesState> {
     }
   }
 
-  Stream<ClassesState> _mapClassesLoadedToState(ClassesLoaded event) async* {
+  Stream<ClassesState> _mapClassesLoadedToState(final ClassesLoaded event) async* {
     await _classesSubscription?.cancel();
-    _classesSubscription = classesRepository.classes(event.tagEnum).listen((classes) => add(ClassesUpdated(classes)));
+    _classesSubscription =
+        classesRepository.classes(event.tagEnum).listen((final classes) => add(ClassesUpdated(classes)));
   }
 
-  Stream<ClassesState> _mapClassesUpdatedToState(ClassesUpdated event) async* {
+  Stream<ClassesState> _mapClassesUpdatedToState(final ClassesUpdated event) async* {
     yield ClassesLoadSuccess(event.classes);
   }
 

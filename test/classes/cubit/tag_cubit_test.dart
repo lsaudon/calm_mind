@@ -14,14 +14,14 @@ void main() {
       blocTest<TagCubit, TagEnum>(
         'emits [TagEnum.innerPeace] when select TagEnum.innerPeace',
         build: () => TagCubit(),
-        act: (cubit) => cubit.select(TagEnum.innerPeace),
+        act: (final cubit) => cubit.select(TagEnum.innerPeace),
         expect: () => const <TagEnum>[TagEnum.innerPeace],
       );
 
       blocTest<TagCubit, TagEnum>(
         'emits [TagEnum.innerPeace] when select twice TagEnum.innerPeace',
         build: () => TagCubit(),
-        act: (cubit) {
+        act: (final cubit) {
           cubit.select(TagEnum.innerPeace);
           cubit.select(TagEnum.innerPeace);
         },
@@ -31,7 +31,7 @@ void main() {
       blocTest<TagCubit, TagEnum>(
         'emits [TagEnum.innerPeace,TagEnum.anxiety] when select TagEnum.innerPeace and TagEnum.anxiety',
         build: () => TagCubit(),
-        act: (cubit) {
+        act: (final cubit) {
           cubit.select(TagEnum.innerPeace);
           cubit.select(TagEnum.anxiety);
         },

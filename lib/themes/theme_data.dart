@@ -18,7 +18,6 @@ class CalmMindThemeData {
     return ThemeData(
       textTheme: _textTheme,
       primaryColor: CalmMindColors.ink06,
-      accentColor: CalmMindColors.ink01,
       backgroundColor: CalmMindColors.ink06,
     );
   }

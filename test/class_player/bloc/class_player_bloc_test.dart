@@ -1,8 +1,8 @@
+import 'package:bloc_test/bloc_test.dart';
 import 'package:calm_mind/class_player/class_player.dart';
 import 'package:calm_mind/classes/classes.dart';
 import 'package:calm_mind/themes/themes.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:bloc_test/bloc_test.dart';
 
 void main() {
   group('ClassPlayerBloc', () {
@@ -19,7 +19,7 @@ void main() {
     blocTest<ClassPlayerBloc, ClassPlayerState>(
       'emits [LoadClasses(TagEnum.none)] when increment is called',
       build: () => ClassPlayerBloc(),
-      act: (bloc) {
+      act: (final bloc) {
         bloc.add(ClassPlayerSelected(_classId));
       },
       expect: () => [

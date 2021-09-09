@@ -10,13 +10,13 @@ class ClassPlayerBloc extends Bloc<ClassPlayerEvent, ClassPlayerState> {
   ClassPlayerBloc() : super(ClassPlayerInitial());
 
   @override
-  Stream<ClassPlayerState> mapEventToState(ClassPlayerEvent event) async* {
+  Stream<ClassPlayerState> mapEventToState(final ClassPlayerEvent event) async* {
     if (event is ClassPlayerSelected) {
       yield* _mapClassPlayerSelectedToState(event);
     }
   }
 
-  Stream<ClassPlayerState> _mapClassPlayerSelectedToState(ClassPlayerSelected event) async* {
+  Stream<ClassPlayerState> _mapClassPlayerSelectedToState(final ClassPlayerSelected event) async* {
     yield ClassPlayerLoadInProgress();
     final classForPlayer = ClassForPlayer(
       event.classId,

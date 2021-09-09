@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 class Tag extends StatelessWidget {
   const Tag(
     this.data, {
-    Key? key,
-    this.active = false,
-    this.onTap,
+    final Key? key,
+    final this.active = false,
+    final this.onTap,
   }) : super(key: key);
 
   final String data;
@@ -14,7 +14,7 @@ class Tag extends StatelessWidget {
   final VoidCallback? onTap;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final textStyle = Theme.of(context).textTheme.button?.copyWith(color: CalmMindColors.ink01);
     final widget = Container(
       decoration: BoxDecoration(
