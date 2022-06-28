@@ -19,6 +19,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     final size = MediaQuery.of(context).size;
+
     return Scaffold(
       body: Stack(
         children: [
@@ -79,11 +80,9 @@ class _Content extends StatelessWidget {
             const SizedBox(height: spacing6),
             InkWell(
               key: const Key('homeView_push_to_ClassesPage'),
-              onTap: () {
-                Navigator.of(context).pushReplacement<MaterialPageRoute, ClassesPage>(
-                  MaterialPageRoute(builder: (final context) => const ClassesPage()),
-                );
-              },
+              onTap: () => Navigator.of(context).pushReplacement<MaterialPageRoute, ClassesPage>(
+                MaterialPageRoute(builder: (final context) => const ClassesPage()),
+              ),
               focusColor: Colors.white,
               child: Container(
                 decoration: const ShapeDecoration(
@@ -97,7 +96,7 @@ class _Content extends StatelessWidget {
                   color: CalmMindColors.ink06,
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),

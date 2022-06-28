@@ -28,6 +28,7 @@ class ClassesBloc extends Bloc<ClassesEvent, ClassesState> {
   Future<void> close() {
     _classesSubscription?.cancel();
     _tagSubscription?.cancel();
+
     return super.close();
   }
 }

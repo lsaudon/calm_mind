@@ -55,6 +55,7 @@ class _Header extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     final theme = Theme.of(context);
+
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(top: spacing4, left: spacing4, right: spacing4),
@@ -82,7 +83,9 @@ class _Header extends StatelessWidget {
                 height: iconSize,
                 width: iconSize,
               ),
-              onPressed: () {},
+              onPressed: () {
+                // TODO(lsaudon): need to implement.
+              },
             ),
           ],
         ),
@@ -97,6 +100,7 @@ class _Tags extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     final list = TagEnum.values.toList()..remove(TagEnum.none);
+
     return BlocBuilder<TagCubit, TagEnum>(
       builder: (final context, final state) {
         return ListView.separated(
@@ -108,9 +112,7 @@ class _Tags extends StatelessWidget {
               item.toText(),
               key: Key('tag_$item'),
               active: state == item,
-              onTap: () {
-                context.read<TagCubit>().select(item);
-              },
+              onTap: () => context.read<TagCubit>().select(item),
             );
             if (index == 0) {
               return Padding(
@@ -118,6 +120,7 @@ class _Tags extends StatelessWidget {
                 child: widget,
               );
             }
+
             return widget;
           },
           separatorBuilder: (final context, final index) {
@@ -141,6 +144,7 @@ class _ClassesList extends StatelessWidget {
         }
         if (state is ClassesLoadSuccess) {
           final classes = state.classes;
+
           return ListView.builder(
             itemCount: classes.length,
             padding: const EdgeInsets.all(spacing4),
@@ -154,6 +158,7 @@ class _ClassesList extends StatelessWidget {
                   color: item.color,
                 );
               }
+
               return _Card(
                 label: item.label,
                 timeLabel: item.timeLabel,
@@ -163,6 +168,7 @@ class _ClassesList extends StatelessWidget {
             },
           );
         }
+
         return const SizedBox();
       },
     );
@@ -219,7 +225,7 @@ class _Card extends StatelessWidget {
                   style: theme.textTheme.headline5?.copyWith(color: CalmMindColors.ink01),
                 ),
               ),
-              _TimeLabel(timeLabel: timeLabel)
+              _TimeLabel(timeLabel: timeLabel),
             ],
           ),
           const SizedBox(height: spacing2),
@@ -229,6 +235,7 @@ class _Card extends StatelessWidget {
         ],
       );
     }
+
     return IntrinsicHeight(
       child: Card(
         shape: const RoundedRectangleBorder(
@@ -237,11 +244,7 @@ class _Card extends StatelessWidget {
         color: color,
         elevation: 0,
         child: InkWell(
-          onTap: () {
-            BlocProvider.of<ClassPlayerBloc>(context).add(ClassPlayerSelected(ClassId.init()));
-            Navigator.of(context)
-                .push<MaterialPageRoute>(MaterialPageRoute(builder: (final context) => const ClassPlayerPage()));
-          },
+          onTap: () => handleTap(context),
           borderRadius: const BorderRadius.all(Radius.circular(spacing4)),
           child: Padding(
             padding: const EdgeInsets.all(spacing4),
@@ -250,6 +253,12 @@ class _Card extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void handleTap(final BuildContext context) {
+    BlocProvider.of<ClassPlayerBloc>(context).add(ClassPlayerSelected(ClassId.init()));
+    Navigator.of(context)
+        .push<MaterialPageRoute>(MaterialPageRoute(builder: (final context) => const ClassPlayerPage()));
   }
 }
 
@@ -263,6 +272,7 @@ class _TimeLabel extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     final theme = Theme.of(context);
+
     return Container(
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(spacing4)),

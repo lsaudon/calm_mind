@@ -34,6 +34,7 @@ class Tag extends StatelessWidget {
         child: widget,
       );
     }
+
     return widget;
   }
 }

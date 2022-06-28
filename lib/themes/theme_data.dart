@@ -12,8 +12,8 @@ const double iconSizeSmall = 24;
 const double iconSize = 32;
 
 class CalmMindThemeData {
-  static ThemeData lightThemeData = themeData();
-  static ThemeData darkThemeData = themeData();
+  static final ThemeData lightThemeData = themeData();
+  static final ThemeData darkThemeData = themeData();
   static ThemeData themeData() {
     return ThemeData(
       textTheme: _textTheme,

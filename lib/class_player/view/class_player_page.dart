@@ -55,16 +55,16 @@ class _Header extends StatelessWidget {
                 CalmMindIcons.chevronArrowLeft,
               ),
               iconSize: iconSize,
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
+              onPressed: () => Navigator.of(context).pop(),
             ),
             IconButton(
               icon: SvgPicture.asset(
                 CalmMindIcons.download,
               ),
               iconSize: iconSize,
-              onPressed: () {},
+              onPressed: () {
+                // TODO(lsaudon): need to implement.
+              },
             ),
           ],
         ),
@@ -85,6 +85,7 @@ class _Content extends StatelessWidget {
         }
         if (state is ClassPlayerLoadSuccess) {
           final classItem = state.value;
+
           return DecoratedBox(
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
@@ -121,6 +122,7 @@ class _Content extends StatelessWidget {
             ),
           );
         }
+
         return const SizedBox();
       },
     );
@@ -170,7 +172,9 @@ class _PlayerElements extends StatelessWidget {
       children: [
         IconButton(
           icon: SvgPicture.asset(CalmMindIcons.fastBackward),
-          onPressed: () {},
+          onPressed: () {
+            // TODO(lsaudon): need to implement.
+          },
         ),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
@@ -178,7 +182,9 @@ class _PlayerElements extends StatelessWidget {
             primary: CalmMindColors.orange,
             elevation: 0,
           ),
-          onPressed: () {},
+          onPressed: () {
+            // TODO(lsaudon): need to implement.
+          },
           child: Padding(
             padding: const EdgeInsets.all(spacing6),
             child: SvgPicture.asset(
@@ -190,7 +196,9 @@ class _PlayerElements extends StatelessWidget {
         ),
         IconButton(
           icon: SvgPicture.asset(CalmMindIcons.fastForward),
-          onPressed: () {},
+          onPressed: () {
+            // TODO(lsaudon): need to implement.
+          },
         ),
       ],
     );
