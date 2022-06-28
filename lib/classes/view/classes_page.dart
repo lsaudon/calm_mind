@@ -17,7 +17,8 @@ class ClassesPage extends StatelessWidget {
           return BlocProvider(
             create: (final _) => ClassesBloc(
               tagCubit: BlocProvider.of<TagCubit>(context),
-              classesRepository: RepositoryProvider.of<ClassesRepository>(context),
+              classesRepository:
+                  RepositoryProvider.of<ClassesRepository>(context),
             )..add(const ClassesLoaded(TagEnum.none)),
             child: const ClassesView(),
           );
@@ -58,7 +59,11 @@ class _Header extends StatelessWidget {
 
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.only(top: spacing4, left: spacing4, right: spacing4),
+        padding: const EdgeInsets.only(
+          top: spacing4,
+          left: spacing4,
+          right: spacing4,
+        ),
         child: Row(
           children: [
             Container(
@@ -74,7 +79,8 @@ class _Header extends StatelessWidget {
             Expanded(
               child: Text(
                 'Hi, Martha',
-                style: theme.textTheme.headline4?.copyWith(color: CalmMindColors.ink01),
+                style: theme.textTheme.headline4
+                    ?.copyWith(color: CalmMindColors.ink01),
               ),
             ),
             IconButton(
@@ -204,7 +210,8 @@ class _Card extends StatelessWidget {
       children: [
         Text(
           label,
-          style: theme.textTheme.headline5?.copyWith(color: CalmMindColors.ink01),
+          style:
+              theme.textTheme.headline5?.copyWith(color: CalmMindColors.ink01),
         ),
         const SizedBox(height: spacing2),
         Row(children: [_TimeLabel(timeLabel: timeLabel)]),
@@ -222,7 +229,8 @@ class _Card extends StatelessWidget {
               Expanded(
                 child: Text(
                   label,
-                  style: theme.textTheme.headline5?.copyWith(color: CalmMindColors.ink01),
+                  style: theme.textTheme.headline5
+                      ?.copyWith(color: CalmMindColors.ink01),
                 ),
               ),
               _TimeLabel(timeLabel: timeLabel),
@@ -256,9 +264,11 @@ class _Card extends StatelessWidget {
   }
 
   void handleTap(final BuildContext context) {
-    BlocProvider.of<ClassPlayerBloc>(context).add(ClassPlayerSelected(ClassId.init()));
-    Navigator.of(context)
-        .push<MaterialPageRoute>(MaterialPageRoute(builder: (final context) => const ClassPlayerPage()));
+    BlocProvider.of<ClassPlayerBloc>(context)
+        .add(ClassPlayerSelected(ClassId.init()));
+    Navigator.of(context).push<MaterialPageRoute>(
+      MaterialPageRoute(builder: (final context) => const ClassPlayerPage()),
+    );
   }
 }
 

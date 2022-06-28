@@ -21,7 +21,10 @@ extension PumpApp on WidgetTester {
       home: widget,
     );
     if (classesRepository != null) {
-      aWidget = RepositoryProvider(create: (final context) => classesRepository, child: aWidget);
+      aWidget = RepositoryProvider(
+        create: (final context) => classesRepository,
+        child: aWidget,
+      );
     }
     return pumpWidget(aWidget);
   }

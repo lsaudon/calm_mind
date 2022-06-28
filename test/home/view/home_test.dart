@@ -15,7 +15,8 @@ void main() {
       expect(find.text('CalmDown'), findsOneWidget);
     });
 
-    testWidgets('go to ClassesPage when push Button is tapped', (final tester) async {
+    testWidgets('go to ClassesPage when push Button is tapped',
+        (final tester) async {
       final classesRepository = ClassesRepository();
       final navigatorObserver = MockNavigatorObserver();
       await tester.pumpApp(

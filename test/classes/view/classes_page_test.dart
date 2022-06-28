@@ -64,7 +64,8 @@ void main() {
       expect(find.text('Zen Meditation'), findsOneWidget);
     });
 
-    testWidgets('innerPeace is active when tap on innerPeace', (final tester) async {
+    testWidgets('innerPeace is active when tap on innerPeace',
+        (final tester) async {
       when(() => classesBloc.state).thenReturn(const ClassesLoadSuccess());
       await tester.pumpApp(
         BlocProvider(

@@ -46,7 +46,10 @@ class _Header extends StatelessWidget {
   Widget build(final BuildContext context) {
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: spacing5, horizontal: spacing4),
+        padding: const EdgeInsets.symmetric(
+          vertical: spacing5,
+          horizontal: spacing4,
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -149,12 +152,18 @@ class _TextContent extends StatelessWidget {
         children: [
           Text(
             label,
-            style: Theme.of(context).textTheme.headline4?.copyWith(color: CalmMindColors.ink01),
+            style: Theme.of(context)
+                .textTheme
+                .headline4
+                ?.copyWith(color: CalmMindColors.ink01),
           ),
           const SizedBox(height: spacing),
           Text(
             tag.toText(),
-            style: Theme.of(context).textTheme.subtitle2?.copyWith(color: CalmMindColors.ink02),
+            style: Theme.of(context)
+                .textTheme
+                .subtitle2
+                ?.copyWith(color: CalmMindColors.ink02),
           ),
         ],
       ),
@@ -220,7 +229,11 @@ class _PlayerTabBars extends StatelessWidget {
       ),
       height: 96,
       child: Padding(
-        padding: const EdgeInsets.only(top: spacing2, left: spacing6, right: spacing6),
+        padding: const EdgeInsets.only(
+          top: spacing2,
+          left: spacing6,
+          right: spacing6,
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceAround,

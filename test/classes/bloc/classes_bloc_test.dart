@@ -18,14 +18,19 @@ void main() {
 
     test('initial state is ClassesInitial', () {
       expect(
-        ClassesBloc(tagCubit: TagCubit(), classesRepository: classesRepository).state.runtimeType,
+        ClassesBloc(tagCubit: TagCubit(), classesRepository: classesRepository)
+            .state
+            .runtimeType,
         ClassesInitial,
       );
     });
 
     blocTest<ClassesBloc, ClassesState>(
       'emits [ClassesLoadSuccess(ClassForTeam)] when ClassesLoaded(TagEnum.none) is called',
-      build: () => ClassesBloc(tagCubit: TagCubit(), classesRepository: classesRepository),
+      build: () => ClassesBloc(
+        tagCubit: TagCubit(),
+        classesRepository: classesRepository,
+      ),
       act: (final bloc) {
         when(() => classesRepository.classes(TagEnum.none)).thenAnswer(
           (final _) => Stream.value([

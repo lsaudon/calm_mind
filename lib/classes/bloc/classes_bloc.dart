@@ -13,10 +13,13 @@ class ClassesBloc extends Bloc<ClassesEvent, ClassesState> {
     });
     on<ClassesLoaded>((final event, final _) async {
       await _classesSubscription?.cancel();
-      _classesSubscription =
-          classesRepository.classes(event.tagEnum).listen((final classes) => add(ClassesUpdated(classes)));
+      _classesSubscription = classesRepository
+          .classes(event.tagEnum)
+          .listen((final classes) => add(ClassesUpdated(classes)));
     });
-    on<ClassesUpdated>((final event, final emit) => emit(ClassesLoadSuccess(event.classes)));
+    on<ClassesUpdated>(
+      (final event, final emit) => emit(ClassesLoadSuccess(event.classes)),
+    );
   }
 
   final TagCubit tagCubit;

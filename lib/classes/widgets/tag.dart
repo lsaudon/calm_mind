@@ -15,7 +15,10 @@ class Tag extends StatelessWidget {
 
   @override
   Widget build(final BuildContext context) {
-    final textStyle = Theme.of(context).textTheme.button?.copyWith(color: CalmMindColors.ink01);
+    final textStyle = Theme.of(context)
+        .textTheme
+        .button
+        ?.copyWith(color: CalmMindColors.ink01);
     final widget = Container(
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.all(Radius.circular(spacing4)),
@@ -25,7 +28,12 @@ class Tag extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: spacing4),
       child: Text(
         data,
-        style: active ? textStyle?.copyWith(color: CalmMindColors.ink06, fontWeight: FontWeight.w800) : textStyle,
+        style: active
+            ? textStyle?.copyWith(
+                color: CalmMindColors.ink06,
+                fontWeight: FontWeight.w800,
+              )
+            : textStyle,
       ),
     );
     if (onTap != null) {

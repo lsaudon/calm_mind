@@ -1,5 +1,4 @@
 {
-    "dart.lineLength": 120,
     "files.exclude": {
         "**/.flutter-plugins*": true,
         "**/.packages": true,

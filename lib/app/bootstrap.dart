@@ -17,6 +17,7 @@ Future<void> bootstrap(final FutureOr<Widget> Function() builder) async {
         blocObserver: AppBlocObserver(),
       );
     },
-    (final error, final stackTrace) => log(error.toString(), stackTrace: stackTrace),
+    (final error, final stackTrace) =>
+        log(error.toString(), stackTrace: stackTrace),
   );
 }
