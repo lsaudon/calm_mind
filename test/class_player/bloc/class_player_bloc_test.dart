@@ -18,7 +18,7 @@ void main() {
 
     blocTest<ClassPlayerBloc, ClassPlayerState>(
       'emits [LoadClasses(TagEnum.none)] when increment is called',
-      build: () => ClassPlayerBloc(),
+      build: ClassPlayerBloc.new,
       act: (final bloc) {
         bloc.add(ClassPlayerSelected(_classId));
       },

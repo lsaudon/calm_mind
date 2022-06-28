@@ -23,11 +23,6 @@ void main() {
   group('ClassesView', () {
     late ClassesBloc classesBloc;
 
-    setUpAll(() {
-      registerFallbackValue<ClassesEvent>(const ClassesLoaded(TagEnum.sleeper));
-      registerFallbackValue<ClassesState>(ClassesLoadInProgress());
-    });
-
     setUp(() {
       classesBloc = MockClassesBloc();
     });

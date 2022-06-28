@@ -3,7 +3,6 @@ import 'package:calm_mind/classes/classes.dart';
 import 'package:calm_mind/themes/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ClassesPage extends StatelessWidget {
@@ -144,10 +143,7 @@ class _ClassesList extends StatelessWidget {
         }
         if (state is ClassesLoadSuccess) {
           final classes = state.classes;
-          return StaggeredGridView.countBuilder(
-            crossAxisCount: 2,
-            mainAxisSpacing: spacing4,
-            crossAxisSpacing: spacing4,
+          return ListView.builder(
             itemCount: classes.length,
             padding: const EdgeInsets.all(spacing4),
             itemBuilder: (final BuildContext context, final int index) {
@@ -166,9 +162,6 @@ class _ClassesList extends StatelessWidget {
                 imageName: item.imageName,
                 color: item.color,
               );
-            },
-            staggeredTileBuilder: (final int index) {
-              return StaggeredTile.fit(index == 0 ? 2 : 1);
             },
           );
         }
