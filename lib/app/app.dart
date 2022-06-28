@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class App extends StatelessWidget {
-  const App({final Key? key}) : super(key: key);
+  const App({final super.key});
 
   @override
   Widget build(final BuildContext context) {

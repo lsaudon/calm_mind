@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ClassesPage extends StatelessWidget {
-  const ClassesPage({final Key? key}) : super(key: key);
+  const ClassesPage({final super.key});
 
   @override
   Widget build(final BuildContext context) {
@@ -28,7 +28,7 @@ class ClassesPage extends StatelessWidget {
 }
 
 class ClassesView extends StatelessWidget {
-  const ClassesView({final Key? key}) : super(key: key);
+  const ClassesView({final super.key});
 
   @override
   Widget build(final BuildContext context) {
@@ -50,7 +50,7 @@ class ClassesView extends StatelessWidget {
 }
 
 class _Header extends StatelessWidget {
-  const _Header({final Key? key}) : super(key: key);
+  const _Header();
 
   @override
   Widget build(final BuildContext context) {
@@ -92,7 +92,7 @@ class _Header extends StatelessWidget {
 }
 
 class _Tags extends StatelessWidget {
-  const _Tags({final Key? key}) : super(key: key);
+  const _Tags();
 
   @override
   Widget build(final BuildContext context) {
@@ -130,9 +130,7 @@ class _Tags extends StatelessWidget {
 }
 
 class _ClassesList extends StatelessWidget {
-  const _ClassesList({
-    final Key? key,
-  }) : super(key: key);
+  const _ClassesList();
 
   @override
   Widget build(final BuildContext context) {
@@ -173,22 +171,18 @@ class _ClassesList extends StatelessWidget {
 
 class _Card extends StatelessWidget {
   const _Card({
-    final Key? key,
     required final this.label,
     required final this.timeLabel,
     required final this.imageName,
     required final this.color,
-  })  : isBig = false,
-        super(key: key);
+  }) : isBig = false;
 
   const _Card.big({
-    final Key? key,
     required final this.label,
     required final this.timeLabel,
     required final this.imageName,
     required final this.color,
-  })  : isBig = true,
-        super(key: key);
+  }) : isBig = true;
 
   final String label;
   final String timeLabel;
@@ -261,9 +255,8 @@ class _Card extends StatelessWidget {
 
 class _TimeLabel extends StatelessWidget {
   const _TimeLabel({
-    final Key? key,
     required final this.timeLabel,
-  }) : super(key: key);
+  });
 
   final String timeLabel;
 

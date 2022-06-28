@@ -6,10 +6,10 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('ClassPlayerBloc', () {
-    late ClassId _classId;
+    late ClassId classId;
 
     setUp(() {
-      _classId = ClassId.init();
+      classId = ClassId.init();
     });
 
     test('initial state is ClassPlayerInitial', () {
@@ -20,13 +20,13 @@ void main() {
       'emits [LoadClasses(TagEnum.none)] when increment is called',
       build: ClassPlayerBloc.new,
       act: (final bloc) {
-        bloc.add(ClassPlayerSelected(_classId));
+        bloc.add(ClassPlayerSelected(classId));
       },
       expect: () => [
         ClassPlayerLoadInProgress(),
         ClassPlayerLoadSuccess(
           ClassForPlayer(
-            _classId,
+            classId,
             'Zen Meditation',
             'url',
             TagEnum.innerPeace,

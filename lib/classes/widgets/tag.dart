@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 class Tag extends StatelessWidget {
   const Tag(
     this.data, {
-    final Key? key,
+    final super.key,
     final this.active = false,
     final this.onTap,
-  }) : super(key: key);
+  });
 
   final String data;
   final bool active;

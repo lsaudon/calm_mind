@@ -22,8 +22,9 @@ void main() {
         'emits [TagEnum.innerPeace] when select twice TagEnum.innerPeace',
         build: TagCubit.new,
         act: (final cubit) {
-          cubit.select(TagEnum.innerPeace);
-          cubit.select(TagEnum.innerPeace);
+          cubit
+            ..select(TagEnum.innerPeace)
+            ..select(TagEnum.innerPeace);
         },
         expect: () => const <TagEnum>[TagEnum.innerPeace],
       );
@@ -32,8 +33,9 @@ void main() {
         'emits [TagEnum.innerPeace,TagEnum.anxiety] when select TagEnum.innerPeace and TagEnum.anxiety',
         build: TagCubit.new,
         act: (final cubit) {
-          cubit.select(TagEnum.innerPeace);
-          cubit.select(TagEnum.anxiety);
+          cubit
+            ..select(TagEnum.innerPeace)
+            ..select(TagEnum.anxiety);
         },
         expect: () => const <TagEnum>[TagEnum.innerPeace, TagEnum.anxiety],
       );

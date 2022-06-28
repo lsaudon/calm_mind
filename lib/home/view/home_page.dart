@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({final Key? key}) : super(key: key);
+  const HomePage({final super.key});
 
   @override
   Widget build(final BuildContext context) {
@@ -14,7 +14,7 @@ class HomePage extends StatelessWidget {
 }
 
 class HomeView extends StatelessWidget {
-  const HomeView({final Key? key}) : super(key: key);
+  const HomeView({final super.key});
 
   @override
   Widget build(final BuildContext context) {
@@ -107,11 +107,11 @@ class _Content extends StatelessWidget {
 
 class Circle extends StatelessWidget {
   const Circle({
-    final Key? key,
+    final super.key,
     final this.offset,
     final this.radius,
     final this.color,
-  }) : super(key: key);
+  });
 
   final Offset? offset;
   final double? radius;

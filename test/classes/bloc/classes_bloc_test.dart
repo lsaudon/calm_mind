@@ -8,29 +8,29 @@ import '../../helpers/helpers.dart';
 
 void main() {
   group('ClassesBloc', () {
-    late ClassesRepository _classesRepository;
-    late ClassId _classId;
+    late ClassesRepository classesRepository;
+    late ClassId classId;
 
     setUp(() {
-      _classesRepository = MockClassesRepository();
-      _classId = ClassId.init();
+      classesRepository = MockClassesRepository();
+      classId = ClassId.init();
     });
 
     test('initial state is ClassesInitial', () {
       expect(
-        ClassesBloc(tagCubit: TagCubit(), classesRepository: _classesRepository).state.runtimeType,
+        ClassesBloc(tagCubit: TagCubit(), classesRepository: classesRepository).state.runtimeType,
         ClassesInitial,
       );
     });
 
     blocTest<ClassesBloc, ClassesState>(
       'emits [ClassesLoadSuccess(ClassForTeam)] when ClassesLoaded(TagEnum.none) is called',
-      build: () => ClassesBloc(tagCubit: TagCubit(), classesRepository: _classesRepository),
+      build: () => ClassesBloc(tagCubit: TagCubit(), classesRepository: classesRepository),
       act: (final bloc) {
-        when(() => _classesRepository.classes(TagEnum.none)).thenAnswer(
+        when(() => classesRepository.classes(TagEnum.none)).thenAnswer(
           (final _) => Stream.value([
             ClassForList(
-              _classId,
+              classId,
               'Zen Meditation',
               '20 min',
               CalmMindImages.smallHappinessEntertainment,
@@ -44,7 +44,7 @@ void main() {
         ClassesLoadSuccess(
           [
             ClassForList(
-              _classId,
+              classId,
               'Zen Meditation',
               '20 min',
               CalmMindImages.smallHappinessEntertainment,

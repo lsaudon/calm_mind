@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ClassPlayerPage extends StatelessWidget {
-  const ClassPlayerPage({final Key? key}) : super(key: key);
+  const ClassPlayerPage({final super.key});
 
   @override
   Widget build(final BuildContext context) {
@@ -15,7 +15,7 @@ class ClassPlayerPage extends StatelessWidget {
 }
 
 class ClassPlayerView extends StatelessWidget {
-  const ClassPlayerView({final Key? key}) : super(key: key);
+  const ClassPlayerView({final super.key});
 
   @override
   Widget build(final BuildContext context) {
@@ -40,9 +40,7 @@ class ClassPlayerView extends StatelessWidget {
 }
 
 class _Header extends StatelessWidget {
-  const _Header({
-    final Key? key,
-  }) : super(key: key);
+  const _Header();
 
   @override
   Widget build(final BuildContext context) {
@@ -76,9 +74,7 @@ class _Header extends StatelessWidget {
 }
 
 class _Content extends StatelessWidget {
-  const _Content({
-    final Key? key,
-  }) : super(key: key);
+  const _Content();
 
   @override
   Widget build(final BuildContext context) {
@@ -89,7 +85,7 @@ class _Content extends StatelessWidget {
         }
         if (state is ClassPlayerLoadSuccess) {
           final classItem = state.value;
-          return Container(
+          return DecoratedBox(
             decoration: const BoxDecoration(
               borderRadius: BorderRadius.only(
                 topLeft: Radius.circular(spacing6),
@@ -133,10 +129,9 @@ class _Content extends StatelessWidget {
 
 class _TextContent extends StatelessWidget {
   const _TextContent({
-    final Key? key,
     required final this.label,
     required final this.tag,
-  }) : super(key: key);
+  });
 
   final String label;
   final TagEnum tag;
@@ -166,9 +161,7 @@ class _TextContent extends StatelessWidget {
 }
 
 class _PlayerElements extends StatelessWidget {
-  const _PlayerElements({
-    final Key? key,
-  }) : super(key: key);
+  const _PlayerElements();
 
   @override
   Widget build(final BuildContext context) {
@@ -205,9 +198,7 @@ class _PlayerElements extends StatelessWidget {
 }
 
 class _PlayerTabBars extends StatelessWidget {
-  const _PlayerTabBars({
-    final Key? key,
-  }) : super(key: key);
+  const _PlayerTabBars();
 
   @override
   Widget build(final BuildContext context) {
@@ -238,9 +229,8 @@ class _PlayerTabBars extends StatelessWidget {
 
 class _PlayerTab extends StatelessWidget {
   const _PlayerTab(
-    this.assetName, {
-    final Key? key,
-  }) : super(key: key);
+    this.assetName,
+  );
 
   final String assetName;
 
