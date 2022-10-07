@@ -1,10 +1,17 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:calm_mind/classes/classes.dart';
-import 'package:calm_mind/themes/themes.dart';
+import 'package:calm_mind/classes/bloc/classes_bloc.dart';
+import 'package:calm_mind/classes/bloc/classes_event.dart';
+import 'package:calm_mind/classes/bloc/classes_state.dart';
+import 'package:calm_mind/classes/cubit/tag_cubit.dart';
+import 'package:calm_mind/classes/models/class_for_list.dart';
+import 'package:calm_mind/classes/models/tag_enum.dart';
+import 'package:calm_mind/classes/repository/classes_repository.dart';
+import 'package:calm_mind/themes/colors.dart';
+import 'package:calm_mind/themes/images.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import '../../helpers/helpers.dart';
+import '../../helpers/mocks.dart';
 
 void main() {
   group('ClassesBloc', () {
@@ -26,7 +33,7 @@ void main() {
     });
 
     blocTest<ClassesBloc, ClassesState>(
-      'emits [ClassesLoadSuccess(ClassForTeam)] when ClassesLoaded(TagEnum.none) is called',
+      '''emits [ClassesLoadSuccess(ClassForTeam)] when ClassesLoaded(TagEnum.none) is called''',
       build: () => ClassesBloc(
         tagCubit: TagCubit(),
         classesRepository: classesRepository,
@@ -40,7 +47,7 @@ void main() {
               '20 min',
               CalmMindImages.smallHappinessEntertainment,
               CalmMindColors.orange,
-            )
+            ),
           ]),
         );
         bloc.add(const ClassesLoaded(TagEnum.none));
@@ -54,7 +61,7 @@ void main() {
               '20 min',
               CalmMindImages.smallHappinessEntertainment,
               CalmMindColors.orange,
-            )
+            ),
           ],
         ),
       ],

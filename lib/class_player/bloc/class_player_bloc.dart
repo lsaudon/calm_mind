@@ -1,8 +1,10 @@
 import 'package:bloc/bloc.dart';
-
-import 'package:calm_mind/class_player/class_player.dart';
-import 'package:calm_mind/classes/classes.dart';
-import 'package:calm_mind/themes/themes.dart';
+import 'package:calm_mind/class_player/bloc/class_player_event.dart';
+import 'package:calm_mind/class_player/bloc/class_player_state.dart';
+import 'package:calm_mind/class_player/models/class_for_player.dart';
+import 'package:calm_mind/classes/models/tag_enum.dart';
+import 'package:calm_mind/themes/colors.dart';
+import 'package:calm_mind/themes/images.dart';
 
 class ClassPlayerBloc extends Bloc<ClassPlayerEvent, ClassPlayerState> {
   ClassPlayerBloc() : super(ClassPlayerInitial()) {

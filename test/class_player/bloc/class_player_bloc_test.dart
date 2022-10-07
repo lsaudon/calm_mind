@@ -1,7 +1,12 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:calm_mind/class_player/class_player.dart';
-import 'package:calm_mind/classes/classes.dart';
-import 'package:calm_mind/themes/themes.dart';
+import 'package:calm_mind/class_player/bloc/class_player_bloc.dart';
+import 'package:calm_mind/class_player/bloc/class_player_event.dart';
+import 'package:calm_mind/class_player/bloc/class_player_state.dart';
+import 'package:calm_mind/class_player/models/class_for_player.dart';
+import 'package:calm_mind/classes/models/class_for_list.dart';
+import 'package:calm_mind/classes/models/tag_enum.dart';
+import 'package:calm_mind/themes/colors.dart';
+import 'package:calm_mind/themes/images.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

@@ -1,4 +1,4 @@
-import 'package:calm_mind/classes/classes.dart';
+import 'package:calm_mind/classes/models/tag_enum.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class TagCubit extends Cubit<TagEnum> {

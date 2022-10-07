@@ -1,6 +1,7 @@
 import 'dart:ui';
 
-import 'package:calm_mind/classes/classes.dart';
+import 'package:calm_mind/classes/models/class_for_list.dart';
+import 'package:calm_mind/classes/models/tag_enum.dart';
 import 'package:equatable/equatable.dart';
 
 class ClassForPlayer extends Equatable {

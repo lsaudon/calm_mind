@@ -1,4 +1,4 @@
-import 'package:calm_mind/class_player/class_player.dart';
+import 'package:calm_mind/class_player/models/class_for_player.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class ClassPlayerState extends Equatable {

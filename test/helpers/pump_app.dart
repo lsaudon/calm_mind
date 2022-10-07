@@ -1,4 +1,4 @@
-import 'package:calm_mind/classes/classes.dart';
+import 'package:calm_mind/classes/repository/classes_repository.dart';
 import 'package:calm_mind/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -26,6 +26,7 @@ extension PumpApp on WidgetTester {
         child: aWidget,
       );
     }
+
     return pumpWidget(aWidget);
   }
 }

@@ -1,12 +1,13 @@
-import 'package:calm_mind/themes/themes.dart';
+import 'package:calm_mind/themes/colors.dart';
+import 'package:calm_mind/themes/theme_data.dart';
 import 'package:flutter/material.dart';
 
 class Tag extends StatelessWidget {
   const Tag(
     this.data, {
-    final super.key,
-    final this.active = false,
-    final this.onTap,
+    super.key,
+    this.active = false,
+    this.onTap,
   });
 
   final String data;

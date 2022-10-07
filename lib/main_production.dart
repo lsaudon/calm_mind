@@ -1,6 +1,6 @@
 import 'package:calm_mind/app/app.dart';
 import 'package:calm_mind/app/bootstrap.dart';
 
-void main() {
-  bootstrap(() => const App());
+Future<void> main() async {
+  await bootstrap(() => const App());
 }

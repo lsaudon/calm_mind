@@ -1,4 +1,4 @@
-import 'package:calm_mind/classes/classes.dart';
+import 'package:calm_mind/classes/models/class_for_list.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class ClassesState extends Equatable {
@@ -13,7 +13,7 @@ class ClassesInitial extends ClassesState {}
 class ClassesLoadInProgress extends ClassesState {}
 
 class ClassesLoadSuccess extends ClassesState {
-  const ClassesLoadSuccess([final this.classes = const []]);
+  const ClassesLoadSuccess([this.classes = const []]);
 
   final List<ClassForList> classes;
 

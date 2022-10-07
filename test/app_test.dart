@@ -1,5 +1,5 @@
 import 'package:calm_mind/app/app.dart';
-import 'package:calm_mind/home/home.dart';
+import 'package:calm_mind/home/view/home_page.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

@@ -1,5 +1,7 @@
-import 'package:calm_mind/classes/classes.dart';
-import 'package:calm_mind/themes/themes.dart';
+import 'package:calm_mind/classes/models/class_for_list.dart';
+import 'package:calm_mind/classes/models/tag_enum.dart';
+import 'package:calm_mind/themes/colors.dart';
+import 'package:calm_mind/themes/images.dart';
 
 class ClassesRepository {
   Stream<List<ClassForList>> classes(final TagEnum tagEnum) async* {

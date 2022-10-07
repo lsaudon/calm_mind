@@ -6,9 +6,7 @@ import 'package:uuid/uuid.dart';
 class ClassId extends Equatable {
   const ClassId._internal(this.value);
 
-  factory ClassId.init() {
-    return ClassId._internal(const Uuid().v4());
-  }
+  factory ClassId.init() => ClassId._internal(const Uuid().v4());
 
   final String value;
 

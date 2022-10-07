@@ -1,26 +1,25 @@
-import 'package:calm_mind/themes/themes.dart';
+import 'package:calm_mind/themes/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-const double spacing = 4;
-const double spacing2 = spacing * 2;
-const double spacing4 = spacing * 4;
-const double spacing5 = spacing * 5;
-const double spacing6 = spacing * 6;
-const double spacing12 = spacing * 12;
-const double iconSizeSmall = 24;
-const double iconSize = 32;
+const spacing = 4.0;
+const spacing2 = spacing * 2;
+const spacing4 = spacing * 4;
+const spacing5 = spacing * 5;
+const spacing6 = spacing * 6;
+const spacing12 = spacing * 12;
+const iconSizeSmall = 24.0;
+const iconSize = 32.0;
+const iconSize2 = 64.0;
 
 class CalmMindThemeData {
   static final ThemeData lightThemeData = themeData();
   static final ThemeData darkThemeData = themeData();
-  static ThemeData themeData() {
-    return ThemeData(
-      textTheme: _textTheme,
-      primaryColor: CalmMindColors.ink06,
-      backgroundColor: CalmMindColors.ink06,
-    );
-  }
+  static ThemeData themeData() => ThemeData(
+        textTheme: _textTheme,
+        primaryColor: CalmMindColors.ink06,
+        backgroundColor: CalmMindColors.ink06,
+      );
 
   static final _textTheme = TextTheme(
     headline1: GoogleFonts.nunitoSans(

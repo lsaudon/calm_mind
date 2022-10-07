@@ -1,4 +1,4 @@
-import 'package:calm_mind/classes/classes.dart';
+import 'package:calm_mind/classes/models/class_for_list.dart';
 import 'package:equatable/equatable.dart';
 
 abstract class ClassPlayerEvent extends Equatable {

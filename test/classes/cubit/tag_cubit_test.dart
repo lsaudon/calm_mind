@@ -1,11 +1,10 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:calm_mind/classes/classes.dart';
+import 'package:calm_mind/classes/cubit/tag_cubit.dart';
+import 'package:calm_mind/classes/models/tag_enum.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('TagCubit', () {
-    setUp(() {});
-
     test('initial state is TagEnum.none', () {
       expect(TagCubit().state, TagEnum.none);
     });
@@ -30,7 +29,7 @@ void main() {
       );
 
       blocTest<TagCubit, TagEnum>(
-        'emits [TagEnum.innerPeace,TagEnum.anxiety] when select TagEnum.innerPeace and TagEnum.anxiety',
+        '''emits [TagEnum.innerPeace,TagEnum.anxiety] when select TagEnum.innerPeace and TagEnum.anxiety''',
         build: TagCubit.new,
         act: (final cubit) {
           cubit

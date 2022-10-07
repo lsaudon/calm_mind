@@ -1,5 +1,10 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:calm_mind/classes/classes.dart';
+import 'package:calm_mind/classes/bloc/classes_bloc.dart';
+import 'package:calm_mind/classes/bloc/classes_event.dart';
+import 'package:calm_mind/classes/bloc/classes_state.dart';
+import 'package:calm_mind/classes/cubit/tag_cubit.dart';
+import 'package:calm_mind/classes/models/tag_enum.dart';
+import 'package:calm_mind/classes/repository/classes_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:mocktail/mocktail.dart';
 
