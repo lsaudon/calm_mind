@@ -1,3 +1,4 @@
+// ignore_for_file: avoid-dynamic
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';

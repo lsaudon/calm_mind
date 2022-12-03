@@ -19,82 +19,23 @@ linter:
     public_member_api_docs: false
     unnecessary_final: false # contradiction with `prefer_final_parameters` and `prefer_final_locals`.
 dart_code_metrics:
+  extends:
+    - package:dart_code_metrics/presets/all.yaml
   rules:
-    # Common
-    - avoid-banned-imports
-    - avoid-collection-methods-with-unrelated-types
-    - avoid-duplicate-exports
-    # - avoid-dynamic
-    - avoid-global-state
-    - avoid-ignoring-return-values:
-      exclude:
-        - test/**
-    - avoid-late-keyword:
-      exclude:
-        - test/**
-    - avoid-missing-enum-constant-in-map
-    - avoid-nested-conditional-expressions
-    - avoid-non-ascii-symbols
-    - avoid-non-null-assertion
-    - avoid-passing-async-when-sync-expected
-    - avoid-redundant-async
-    - avoid-throw-in-catch-block
-    # - avoid-top-level-members-in-tests
-    - avoid-unnecessary-type-assertions
-    - avoid-unnecessary-type-casts
-    - avoid-unrelated-type-assertions
-    - avoid-unused-parameters
-    - ban-name
-    - binary-expression-operand-order
-    - double-literal-format
-    - format-comment
-    # - member-ordering
-    # - member-ordering-extended
-    - newline-before-return
-    - no-boolean-literal-compare
-    - no-empty-block
+    - arguments-ordering:
+        child-last: true
+    - member-ordering: false
     - no-equal-arguments:
-      ignored-parameters:
-        - backgroundColor
-        - height
-        - left
-        - primaryColor
-        - right
-        - top
-        - topLeft
-        - topRight
-        - width
-    - no-equal-then-else
-    # - no-magic-number
-    - no-object-declaration
-    - prefer-async-await
-    - prefer-commenting-analyzer-ignores
-    - prefer-conditional-expressions
-    # - prefer-correct-identifier-length
-    # - prefer-correct-type-name
-    - prefer-enums-by-name
-    - prefer-first
-    - prefer-immediate-return
-    - prefer-last
-    # - prefer-match-file-name
-    - prefer-moving-to-variable
-    - prefer-trailing-comma
-    - tag-name
-    # Flutter
-    - always-remove-listener
-    - avoid-border-all
-    - avoid-returning-widgets
-    - avoid-shrink-wrap-in-lists
-    - avoid-unnecessary-setstate
-    - avoid-use-expanded-as-spacer
-    - avoid-wrapping-in-padding
-    - check-for-equals-in-render-object-setters
-    - consistent-update-render-object
-    - prefer-const-border-radius
-    - prefer-correct-edge-insets-constructor
-    # - prefer-extracting-callbacks
+        ignored-parameters:
+          - backgroundColor
+          - height
+          - left
+          - primaryColor
+          - right
+          - top
+          - topLeft
+          - topRight
+          - width
     - prefer-single-widget-per-file:
-      ignore-private-widgets: true
-    # Intl
-    - prefer-intl-name
-    - provide-correct-intl-args
+        ignore-private-widgets: true
+    - prefer-correct-identifier-length: false

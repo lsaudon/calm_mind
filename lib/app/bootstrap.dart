@@ -5,6 +5,8 @@ import 'package:bloc/bloc.dart';
 import 'package:calm_mind/app/app_bloc_observer.dart';
 import 'package:flutter/widgets.dart';
 
+// Ignored for some reasons
+// ignore: prefer-static-class
 Future<void> bootstrap(final FutureOr<Widget> Function() builder) async {
   FlutterError.onError = (final details) {
     log(details.exceptionAsString(), stackTrace: details.stack);

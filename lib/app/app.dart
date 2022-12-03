@@ -16,13 +16,13 @@ class App extends StatelessWidget {
         child: BlocProvider(
           create: (final context) => ClassPlayerBloc(),
           child: MaterialApp(
+            home: const HomePage(),
             theme: CalmMindThemeData.lightThemeData,
             localizationsDelegates: const [
               AppLocalizations.delegate,
               GlobalMaterialLocalizations.delegate,
             ],
             supportedLocales: AppLocalizations.supportedLocales,
-            home: const HomePage(),
           ),
         ),
       );

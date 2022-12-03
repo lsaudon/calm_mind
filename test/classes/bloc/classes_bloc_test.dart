@@ -4,6 +4,7 @@ import 'package:calm_mind/classes/bloc/classes_event.dart';
 import 'package:calm_mind/classes/bloc/classes_state.dart';
 import 'package:calm_mind/classes/cubit/tag_cubit.dart';
 import 'package:calm_mind/classes/models/class_for_list.dart';
+import 'package:calm_mind/classes/models/class_id.dart';
 import 'package:calm_mind/classes/models/tag_enum.dart';
 import 'package:calm_mind/classes/repository/classes_repository.dart';
 import 'package:calm_mind/themes/colors.dart';

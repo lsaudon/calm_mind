@@ -6,7 +6,7 @@ import 'package:calm_mind/class_player/view/class_player_page.dart';
 import 'package:calm_mind/classes/bloc/classes_bloc.dart';
 import 'package:calm_mind/classes/bloc/classes_state.dart';
 import 'package:calm_mind/classes/cubit/tag_cubit.dart';
-import 'package:calm_mind/classes/models/class_for_list.dart';
+import 'package:calm_mind/classes/models/class_id.dart';
 import 'package:calm_mind/classes/models/tag_enum.dart';
 import 'package:calm_mind/classes/widgets/tag.dart';
 import 'package:calm_mind/themes/colors.dart';
@@ -47,8 +47,8 @@ class _Header extends StatelessWidget {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.only(
-          top: spacing4,
           left: spacing4,
+          top: spacing4,
           right: spacing4,
         ),
         child: Row(
@@ -71,19 +71,21 @@ class _Header extends StatelessWidget {
               ),
             ),
             IconButton(
+              onPressed: menuBurgerOnPressed,
               icon: SvgPicture.asset(
                 CalmMindIcons.menuBurger,
-                height: iconSize,
                 width: iconSize,
+                height: iconSize,
               ),
-              onPressed: () {
-                debugPrint('menuBurger');
-              },
             ),
           ],
         ),
       ),
     );
+  }
+
+  void menuBurgerOnPressed() {
+    debugPrint('menuBurger');
   }
 }
 
@@ -97,7 +99,6 @@ class _Tags extends StatelessWidget {
     return BlocBuilder<TagCubit, TagEnum>(
       builder: (final context, final state) => ListView.separated(
         scrollDirection: Axis.horizontal,
-        itemCount: list.length,
         itemBuilder: (final context, final index) {
           final item = list[index];
           final widget = Tag(
@@ -117,6 +118,7 @@ class _Tags extends StatelessWidget {
         },
         separatorBuilder: (final context, final index) =>
             const SizedBox(width: spacing2),
+        itemCount: list.length,
       ),
     );
   }
@@ -136,7 +138,6 @@ class _ClassesList extends StatelessWidget {
             final classes = state.classes;
 
             return ListView.builder(
-              itemCount: classes.length,
               padding: const EdgeInsets.all(spacing4),
               itemBuilder: (final context, final index) {
                 final item = classes[index];
@@ -156,6 +157,7 @@ class _ClassesList extends StatelessWidget {
                   color: item.color,
                 );
               },
+              itemCount: classes.length,
             );
           }
 
@@ -230,18 +232,15 @@ class _Card extends StatelessWidget {
 
     return IntrinsicHeight(
       child: Card(
+        color: color,
+        elevation: 0,
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(spacing4)),
         ),
-        color: color,
-        elevation: 0,
         child: InkWell(
           onTap: () => handleTap(context),
           borderRadius: const BorderRadius.all(Radius.circular(spacing4)),
-          child: Padding(
-            padding: const EdgeInsets.all(spacing4),
-            child: child,
-          ),
+          child: Padding(padding: const EdgeInsets.all(spacing4), child: child),
         ),
       ),
     );
@@ -251,7 +250,7 @@ class _Card extends StatelessWidget {
     BlocProvider.of<ClassPlayerBloc>(context)
         .add(ClassPlayerSelected(ClassId.init()));
     unawaited(
-      Navigator.of(context).push<MaterialPageRoute<dynamic>>(
+      Navigator.of(context).push<MaterialPageRoute<ClassPlayerPage>>(
         MaterialPageRoute(builder: (final context) => const ClassPlayerPage()),
       ),
     );
@@ -268,20 +267,20 @@ class _TimeLabel extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     final theme = Theme.of(context);
+    const height = 24.0;
 
     return Container(
-      decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(spacing4)),
-        color: CalmMindColors.ink06,
-      ),
       alignment: Alignment.center,
       padding: const EdgeInsets.symmetric(horizontal: spacing2),
-      height: 24,
+      decoration: const BoxDecoration(
+        color: CalmMindColors.ink06,
+        borderRadius: BorderRadius.all(Radius.circular(spacing4)),
+      ),
+      height: height,
       child: Text(
         timeLabel,
-        style: theme.textTheme.caption?.copyWith(
-          color: CalmMindColors.darkBackground,
-        ),
+        style: theme.textTheme.caption
+            ?.copyWith(color: CalmMindColors.darkBackground),
       ),
     );
   }

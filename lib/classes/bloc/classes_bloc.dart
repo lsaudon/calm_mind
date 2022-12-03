@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:calm_mind/classes/bloc/classes_event.dart';
 import 'package:calm_mind/classes/bloc/classes_state.dart';
 import 'package:calm_mind/classes/cubit/tag_cubit.dart';
+import 'package:calm_mind/classes/models/class_for_list.dart';
+import 'package:calm_mind/classes/models/tag_enum.dart';
 import 'package:calm_mind/classes/repository/classes_repository.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -25,10 +27,10 @@ class ClassesBloc extends Bloc<ClassesEvent, ClassesState> {
     );
   }
 
-  final TagCubit tagCubit;
   final ClassesRepository classesRepository;
-  StreamSubscription<dynamic>? _tagSubscription;
-  StreamSubscription<dynamic>? _classesSubscription;
+  final TagCubit tagCubit;
+  StreamSubscription<TagEnum>? _tagSubscription;
+  StreamSubscription<List<ClassForList>>? _classesSubscription;
 
   @override
   Future<void> close() {
