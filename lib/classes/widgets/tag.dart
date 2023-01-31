@@ -18,7 +18,7 @@ class Tag extends StatelessWidget {
   Widget build(final BuildContext context) {
     final textStyle = Theme.of(context)
         .textTheme
-        .button
+        .labelLarge
         ?.copyWith(color: CalmMindColors.ink01);
     final widget = Container(
       decoration: BoxDecoration(

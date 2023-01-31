@@ -143,12 +143,13 @@ class _TextContent extends StatelessWidget {
         children: [
           Text(
             label,
-            style: textTheme.headline4?.copyWith(color: CalmMindColors.ink01),
+            style:
+                textTheme.headlineMedium?.copyWith(color: CalmMindColors.ink01),
           ),
           const SizedBox(height: spacing),
           Text(
             tag.toText(),
-            style: textTheme.subtitle2?.copyWith(color: CalmMindColors.ink02),
+            style: textTheme.titleSmall?.copyWith(color: CalmMindColors.ink02),
           ),
         ],
       ),

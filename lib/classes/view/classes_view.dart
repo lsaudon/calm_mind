@@ -66,7 +66,7 @@ class _Header extends StatelessWidget {
             Expanded(
               child: Text(
                 'Hi, Martha',
-                style: theme.textTheme.headline4
+                style: theme.textTheme.headlineMedium
                     ?.copyWith(color: CalmMindColors.ink01),
               ),
             ),
@@ -190,15 +190,15 @@ class _Card extends StatelessWidget {
   @override
   Widget build(final BuildContext context) {
     final theme = Theme.of(context);
-    final headline5Ink01 =
-        theme.textTheme.headline5?.copyWith(color: CalmMindColors.ink01);
+    final headlineSmallInk01 =
+        theme.textTheme.headlineSmall?.copyWith(color: CalmMindColors.ink01);
 
     Widget child = Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
         Text(
           label,
-          style: headline5Ink01,
+          style: headlineSmallInk01,
         ),
         const SizedBox(height: spacing2),
         Row(children: [_TimeLabel(timeLabel: timeLabel)]),
@@ -216,7 +216,7 @@ class _Card extends StatelessWidget {
               Expanded(
                 child: Text(
                   label,
-                  style: headline5Ink01,
+                  style: headlineSmallInk01,
                 ),
               ),
               _TimeLabel(timeLabel: timeLabel),
@@ -279,7 +279,7 @@ class _TimeLabel extends StatelessWidget {
       height: height,
       child: Text(
         timeLabel,
-        style: theme.textTheme.caption
+        style: theme.textTheme.bodySmall
             ?.copyWith(color: CalmMindColors.darkBackground),
       ),
     );

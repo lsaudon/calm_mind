@@ -62,7 +62,7 @@ class _Content extends StatelessWidget {
                 const SizedBox(width: spacing),
                 Text(
                   l10n.applicationName,
-                  style: theme.textTheme.headline5
+                  style: theme.textTheme.headlineSmall
                       ?.copyWith(color: CalmMindColors.ink03),
                 ),
               ],
@@ -70,7 +70,7 @@ class _Content extends StatelessWidget {
             const SizedBox(height: spacing2),
             Text(
               l10n.tagline,
-              style: theme.textTheme.headline2
+              style: theme.textTheme.displayMedium
                   ?.copyWith(color: CalmMindColors.ink01),
             ),
             const SizedBox(height: spacing6),
@@ -84,7 +84,7 @@ class _Content extends StatelessWidget {
               key: const Key('homeView_push_to_ClassesPage'),
               onTap: () => unawaited(
                 Navigator.of(context)
-                    .pushReplacement<MaterialPageRoute<dynamic>, ClassesPage>(
+                    .pushReplacement<MaterialPageRoute<void>, ClassesPage>(
                   MaterialPageRoute(
                     builder: (final context) => const ClassesPage(),
                   ),

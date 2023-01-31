@@ -18,71 +18,71 @@ class CalmMindThemeData {
   static ThemeData themeData() => ThemeData(
         textTheme: _textTheme,
         primaryColor: CalmMindColors.ink06,
-        backgroundColor: CalmMindColors.ink06,
+        colorScheme: const ColorScheme.light(),
       );
 
   static final _textTheme = TextTheme(
-    headline1: GoogleFonts.nunitoSans(
+    displayLarge: GoogleFonts.nunitoSans(
       fontSize: 56,
       fontWeight: FontWeight.w700,
       letterSpacing: -1,
     ),
-    headline2: GoogleFonts.nunitoSans(
+    displayMedium: GoogleFonts.nunitoSans(
       fontSize: 40,
       fontWeight: FontWeight.w700,
       letterSpacing: -1,
     ),
-    headline3: GoogleFonts.nunitoSans(
+    displaySmall: GoogleFonts.nunitoSans(
       fontSize: 32,
       fontWeight: FontWeight.w800,
       letterSpacing: -1,
     ),
-    headline4: GoogleFonts.nunitoSans(
+    headlineMedium: GoogleFonts.nunitoSans(
       fontSize: 24,
       fontWeight: FontWeight.w700,
       letterSpacing: -0.5,
     ),
-    headline5: GoogleFonts.nunitoSans(
+    headlineSmall: GoogleFonts.nunitoSans(
       fontSize: 20,
       fontWeight: FontWeight.w700,
       letterSpacing: -0.5,
     ),
-    headline6: GoogleFonts.nunitoSans(
+    titleLarge: GoogleFonts.nunitoSans(
       fontSize: 22,
       fontWeight: FontWeight.w700,
       letterSpacing: 0.15,
     ),
-    subtitle1: GoogleFonts.nunitoSans(
+    titleMedium: GoogleFonts.nunitoSans(
       fontSize: 17,
       fontWeight: FontWeight.w400,
       letterSpacing: 0.15,
     ),
-    subtitle2: GoogleFonts.nunitoSans(
+    titleSmall: GoogleFonts.nunitoSans(
       fontSize: 14,
       fontWeight: FontWeight.w400,
       letterSpacing: 0,
     ),
-    bodyText1: GoogleFonts.nunitoSans(
+    bodyLarge: GoogleFonts.nunitoSans(
       fontSize: 17,
       fontWeight: FontWeight.w400,
       letterSpacing: 0.5,
     ),
-    bodyText2: GoogleFonts.nunitoSans(
+    bodyMedium: GoogleFonts.nunitoSans(
       fontSize: 15,
       fontWeight: FontWeight.w400,
       letterSpacing: 0.25,
     ),
-    button: GoogleFonts.nunitoSans(
+    labelLarge: GoogleFonts.nunitoSans(
       fontSize: 16,
       fontWeight: FontWeight.w400,
       letterSpacing: -0.5,
     ),
-    caption: GoogleFonts.nunitoSans(
+    bodySmall: GoogleFonts.nunitoSans(
       fontSize: 12,
       fontWeight: FontWeight.w800,
       letterSpacing: 0,
     ),
-    overline: GoogleFonts.nunitoSans(
+    labelSmall: GoogleFonts.nunitoSans(
       fontSize: 11,
       fontWeight: FontWeight.w400,
       letterSpacing: 1.5,

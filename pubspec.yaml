@@ -3,8 +3,8 @@ description: A new Flutter project.
 version: 1.0.0+1
 publish_to: none
 environment:
-  sdk: ">=2.18.4 <3.0.0"
-  flutter: ">=3.3.8"
+  sdk: ">=2.19.0 <3.0.0"
+  flutter: ">=3.7.0"
 dependencies:
   bloc: ^8.1.0
   equatable: ^2.0.5
@@ -15,19 +15,16 @@ dependencies:
     sdk: flutter
   flutter_staggered_grid_view: ^0.6.2
   flutter_svg: ^1.1.6
-  google_fonts: ^3.0.1
+  google_fonts: ^4.0.1
   intl: ^0.17.0
   uuid: ^3.0.7
 
 dev_dependencies:
   bloc_test: ^9.1.0
-  dart_code_metrics: ^5.1.0
   flutter_test:
     sdk: flutter
   mocktail: ^0.3.0
 
-dependency_overrides:
-  test_api: ^0.4.14
 flutter:
   uses-material-design: true
   generate: true
