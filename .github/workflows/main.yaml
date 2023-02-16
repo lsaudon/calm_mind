@@ -2,13 +2,30 @@ name: calm_mind
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/dart_package.yml@v1
     with:
-      flutter_channel: stable
-      min_coverage: 1
+      min_coverage: 90
+  l10n-unused:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 📚 Git Checkout
+        uses: actions/checkout@v3
+
+      - name: 🎯 Setup Dart
+        uses: dart-lang/setup-dart@v1
+        with:
+          sdk: "stable"
+
+      - name: 📦 Install Dependencies
+        run: |
+          dart pub global activate l10nization_cli
+          dart pub get
+
+      - name: 🔎 Check unused l10n translation
+        run: dart run l10nization check-unused
