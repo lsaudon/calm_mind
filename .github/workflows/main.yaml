@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/dart_package.yml@v1
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/flutter_package.yml@v1
     with:
       min_coverage: 90
   l10n-unused:
@@ -25,4 +25,4 @@ jobs:
           dart pub global activate l10nization_cli
 
       - name: 🔎 Check unused l10n translation
-        run: dart run l10nization check-unused
+        run: l10nization check-unused
