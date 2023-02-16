@@ -17,7 +17,7 @@ jobs:
       - name: 📚 Git Checkout
         uses: actions/checkout@v3
 
-      - uses: subosito/flutter-action@2
+      - uses: subosito/flutter-action@v2
 
       - name: 📦 Install Dependencies
         run: |
