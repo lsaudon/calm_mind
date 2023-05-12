@@ -12,15 +12,15 @@ class ClassPlayerView extends StatelessWidget {
   const ClassPlayerView({super.key});
 
   @override
-  Widget build(final BuildContext context) => Scaffold(
+  Widget build(final BuildContext context) => const Scaffold(
         backgroundColor: CalmMindColors.yellow,
         body: Column(
           children: [
-            const _Header(),
+            _Header(),
             Expanded(
               child: Stack(
                 alignment: Alignment.bottomCenter,
-                children: const [
+                children: [
                   _Content(),
                   _PlayerTabBars(),
                 ],
@@ -211,8 +211,8 @@ class _PlayerTabBars extends StatelessWidget {
           color: CalmMindColors.orange,
         ),
         height: 96,
-        child: Padding(
-          padding: const EdgeInsets.only(
+        child: const Padding(
+          padding: EdgeInsets.only(
             top: spacing2,
             left: spacing6,
             right: spacing6,
@@ -220,7 +220,7 @@ class _PlayerTabBars extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: const [
+            children: [
               _PlayerTab(CalmMindIcons.favourites),
               _PlayerTab(CalmMindIcons.playlist),
               _PlayerTab(CalmMindIcons.shuffle),

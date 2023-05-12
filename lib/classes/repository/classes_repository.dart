@@ -45,7 +45,6 @@ class ClassesRepository {
             CalmMindColors.purple,
           ),
         ];
-        break;
       case TagEnum.sleeper:
         yield [
           ClassForList(
@@ -84,7 +83,6 @@ class ClassesRepository {
             CalmMindColors.purple,
           ),
         ];
-        break;
       case TagEnum.innerPeace:
         yield [
           ClassForList(
@@ -123,7 +121,6 @@ class ClassesRepository {
             CalmMindColors.purple,
           ),
         ];
-        break;
       case TagEnum.stress:
         yield [
           ClassForList(
@@ -162,7 +159,6 @@ class ClassesRepository {
             CalmMindColors.purple,
           ),
         ];
-        break;
       case TagEnum.anxiety:
         yield [
           ClassForList(
@@ -201,7 +197,6 @@ class ClassesRepository {
             CalmMindColors.purple,
           ),
         ];
-        break;
     }
   }
 }

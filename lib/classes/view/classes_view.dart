@@ -21,9 +21,9 @@ class ClassesView extends StatelessWidget {
   const ClassesView({super.key});
 
   @override
-  Widget build(final BuildContext context) => Scaffold(
+  Widget build(final BuildContext context) => const Scaffold(
         body: Column(
-          children: const [
+          children: [
             _Header(),
             SizedBox(height: spacing5),
             SizedBox(
